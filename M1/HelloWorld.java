@@ -1,8 +1,7 @@
 /*HELLOWORLD*/
-import java.io.*;
-public class HelloWorld {
+public class HelloWorld { 
 //HELLO
-public static void main(String[] args) {
+public static void main(final String[] args) {
 //HELLO
 System.out.println("Hello World!");
 }
