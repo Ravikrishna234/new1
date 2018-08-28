@@ -23,12 +23,12 @@ final class Solution {
     * @param c c
     **/
     public static void rootsEquation(final int a, final int b, final int c) {
-        final int TWO = 2;
-        double d = (b * b) - (TWO * TWO * a * c);
+        final int two = 2;
+        double d = (b * b) - (two * two * a * c);
         double result = - b + (Math.sqrt(d));
-        result = result / (TWO * a);
+        result = result / (two * a);
         double result1 = -b - (Math.sqrt(d));
-        result1 = result1 / (TWO * a);
+        result1 = result1 / (two * a);
         System.out.println(result + " " + result1);
 
     }
