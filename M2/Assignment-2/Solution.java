@@ -25,7 +25,7 @@ final class Solution {
     public static void rootsEquation(final int a, final int b, final int c) {
         final int two = 2;
         double d = (b * b) - (two * two * a * c);
-        double result = - b + (Math.sqrt(d));
+        double result = -b + (Math.sqrt(d));
         result = result / (two * a);
         double result1 = -b - (Math.sqrt(d));
         result1 = result1 / (two * a);
