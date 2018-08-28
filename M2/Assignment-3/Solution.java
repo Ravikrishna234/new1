@@ -18,7 +18,7 @@ final class Solution {
     /**
     * @param base a
     * @param exponent b
-    * @return
+    * @return comment
     **/
     public static long power(final int base, final int exponent) {
         if (exponent == 0) {
