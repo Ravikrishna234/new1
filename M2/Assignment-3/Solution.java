@@ -12,7 +12,10 @@ public class Solution {
         System.out.println(result);
 	}
 	public static int power(int base,int exponent) {
-		if(exponent==1) {
+		if(exponent==0) {
+			return 1;
+		}
+		else if(exponent==1){
 			return base;
 		}
 		else{
