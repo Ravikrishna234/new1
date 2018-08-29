@@ -16,27 +16,17 @@ public class Solution {
     /*
 	Need to write the gcd function and print the output.
 	*/
-    public static int gcd(int a,int b) {
-        int numerator,denominator,remainder=0;
-        if(a>b) {
-            numerator = a;
-            denominator = b;
-        }
-        else {
-            numerator = b;
-            denominator = a;
-        }
-        remainder = numerator % denominator;
-        if(remainder==0 || remainder == 1) {
-            return remainder;
-        }
-        while(remainder!=0) {
-        numerator = denominator;
-        denominator = remainder;
-        remainder = numerator % denominator;
-    }
+    public static int gcd(final int a,final int b) {
+        int remainder=0;
         
-        return remainder;
+       for(int i=1;i<=a && i<=b;i++)
+       {
+        if(a%i ==0 && b%i ==0) {
+            remainder = i;
         }
+
+       }
+       return remainder;
         
+}
 }
