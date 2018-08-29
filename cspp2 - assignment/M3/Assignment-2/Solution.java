@@ -4,7 +4,7 @@ final class Solution {
     /**
      * @brief [brief description]
      * @details [long description]
-     **/
+    */
     private Solution() { }
     /**
      * @param args [description]
