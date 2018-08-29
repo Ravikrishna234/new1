@@ -1,9 +1,22 @@
 
 import java.util.Scanner;
 /*
-	Do not modify this main function.
-	*/
-public class Solution {
+    Do not modify this main function.
+    */
+final class Solution {
+    /**
+     * @brief [brief description]
+     * @details [long description]
+     * 
+     * @param args [description]
+     */
+    private Solution(){}
+    /**
+     * @brief [brief description]
+     * @details [long description]
+     * 
+     * @param args [description]
+     */
 
     public static void main(String[] args) {
         int result;
@@ -13,9 +26,15 @@ public class Solution {
         result = gcd(n1,n2);
         System.out.println(result);
     }
-    /*
-	Need to write the gcd function and print the output.
-	*/
+    /**
+     * @brief [brief description]
+     * @details [long description]
+     * 
+     * @param int [description]
+     * @param int [description]
+     * 
+     * @return [description]
+     */
     public static int gcd(final int a,final int b) {
         int remainder=0;
         
