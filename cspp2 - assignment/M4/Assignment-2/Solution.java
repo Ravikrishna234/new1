@@ -24,14 +24,10 @@ public class Solution {
 				b[i][j] = s.nextInt();
 			}
 		}
-		for(int i=0;i<row1;i++)
-		{
 		if(col1!=row1 || col2!=row2){
 			System.out.println("not possible");
-			break;
 
 		}
-	}
 		int result[][] = new int[row1][col2];
 		for(int i=0;i<row1;i++)
 		{
