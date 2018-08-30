@@ -41,14 +41,20 @@ public class Solution {
 			{
 
 		if(j<col2-1)
+			{
 		System.out.print(result[i][j]+" ");
+			}
 		else
+			{
 		System.out.print(result[i][j]);
-	        }
+			}
+	     }
 	System.out.print("\n");
         }
 }
 else
+{
 System.out.println("not possible");
+}
 }
 }
