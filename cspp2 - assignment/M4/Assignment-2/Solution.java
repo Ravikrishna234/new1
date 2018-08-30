@@ -26,7 +26,6 @@ public class Solution {
 		}
 		if(col1!=row1 || col2!=row2){
 			System.out.println("not possible");
-			return;
 		}
 		int result[][] = new int[row1][col2];
 		for(int i=0;i<row1;i++)
@@ -40,9 +39,13 @@ public class Solution {
 		for(int i=0;i<row1;i++){
 			for(int j=0;j<col2;j++){
 
-
+			if(j<col2-1){
 		
 		System.out.print(result[i][j]+" ");
+	}
+	else{
+		System.out.print(result[i][j]);
+	}
 	}
 	System.out.print("\n");
 }
