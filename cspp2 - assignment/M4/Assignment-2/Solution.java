@@ -17,7 +17,7 @@ public class Solution {
 		int row2 = s.nextInt();
 		int col2 = s.nextInt();
 		int b[][] = new int[row2][col2];
-		System.out.println(row1+" "+row2+" "+col1+" "+col2);
+		//System.out.println(row1+" "+row2+" "+col1+" "+col2);
 		if(row1==row2 && col1==col2)
 		{
 		
