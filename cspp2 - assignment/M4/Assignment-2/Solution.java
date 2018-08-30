@@ -7,12 +7,6 @@ public class Solution {
 		int row1 = s.nextInt();
 		int col1 = s.nextInt();
 		int a[][] = new int[row1][col1];
-		int row2 = s.nextInt();
-		int col2 = s.nextInt();
-		int b[][] = new int[row2][col2];
-		System.out.println(row1+" "+row2+" "+col1+" "+col2);
-		if(row1==row2 && col1==col2)
-		{
 		for(int i=0; i<row1;i++)
 		{
 			for(int j=0;j<col1;j++)
@@ -20,6 +14,13 @@ public class Solution {
 				a[i][j] = s.nextInt();
 			}
 		}
+		int row2 = s.nextInt();
+		int col2 = s.nextInt();
+		int b[][] = new int[row2][col2];
+		System.out.println(row1+" "+row2+" "+col1+" "+col2);
+		if(row1==row2 && col1==col2)
+		{
+		
 		for(int i=0;i<row2;i++)
 		{
 			for(int j=0;j<col2;j++)
