@@ -1,9 +1,11 @@
 import java.util.Scanner;
 /**BINARYTODECIMAL.**/
 final class Solution {
-    /*
-    Do not modify this main function.
-    */
+    /**
+     * @brief [brief description]
+     * @details [long description]
+     * Do not modify this main function.
+    **/
     private Solution() { }
     /**
      * @param args [description]
