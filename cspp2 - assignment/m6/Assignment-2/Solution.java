@@ -5,39 +5,53 @@ final class Solution {
      * Constructs the object.
      */
     private Solution() { }
-    static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
-        for(int i=0;i<rows;i++)
-        {
-            for(int j=0;j<columns;j++)
-            {
-                if(a[i][j]>=0 && a[i][j]<=49)
-                {
-                    a[i][j] = 0;
-                }
-                else if(a[i][j]>=50 && a[i][j]<=150)
-                {
-                    a[i][j] = 100;
-                }
-                else if(a[i][j]>=151 && a[i][j]<=249)
-                {
-                    a[i][j] = 200;
-                }
-                else if(a[i][j]>=250 && a[i][j]<=350)
-                {
-                    a[i][j] = 300;
-                }
-                else if(a[i][j]>=351 && a[i][j]<=449)
-                {
-                    a[i][j] = 400;
-                }
-                else if(a[i][j]>=450 && a[i][j]<=549)
-                {
-                    a[i][j] = 500;
+    /**
+     * @param a [][]
+     * @param row rows
+     * @param col columns
+     * @return value
+     */
+    static int[][] roundHundred(final int[][] a, final int row, final int col) {
+        final int number1 = 0;
+        final int number2 = 49;
+        final int number3 = 50;
+        final int number4 = 150;
+        final int number5 = 151;
+        final int number6 = 249;
+        final int number7 = 250;
+        final int number8 = 350;
+        final int number9 = 351;
+        final int number10 = 449;
+        final int number11 = 450;
+        final int number12 = 549;
+        final int number13 = 0;
+        final int number14 = 100;
+        final int number15 = 200;
+        final int number16 = 300;
+        final int number17 = 400;
+        final int number18 = 500;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (a[i][j] >= number1 && a[i][j] <= number2) {
+                    a[i][j] = number13;
+                } else if (a[i][j] >= number3 && a[i][j] <= number4) {
+                    a[i][j] = number14;
+                } else if (a[i][j] >= number5 && a[i][j] <= number6) {
+                    a[i][j] = number15;
+                } else if (a[i][j] >= number7 && a[i][j] <= number8) {
+                    a[i][j] = number16;
+                } else if (a[i][j] >= number9 && a[i][j] <= number10) {
+                    a[i][j] = number17;
+                } else if (a[i][j] >= number11 && a[i][j] <= number12) {
+                    a[i][j] = number18;
                 }
                 }
             }
             return a;
         }
+        /**
+         * @param args value
+         */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int m = scan.nextInt();
