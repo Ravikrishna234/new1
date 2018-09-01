@@ -9,15 +9,17 @@ final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution() {
-        //not used
-    }
+    private Solution() { }
+    /**
+     * @param charArray value
+     * @param oldChar value
+     * @param newChar value
+     * @return [description]
+     */
     static char[] replaceAll(final char[] charArray,
         final char oldChar, final char newChar) {
-        for(int i=0;i<charArray.length;i++)
-        {
-            if(oldChar == charArray[i])
-            {
+        for (int i = 0; i < charArray.length; i++) {
+            if (oldChar == charArray[i]) {
                 charArray[i] = newChar;
             }
         }
