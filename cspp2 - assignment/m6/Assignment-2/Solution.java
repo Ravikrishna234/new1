@@ -18,11 +18,26 @@ final class Solution {
                 {
                     a[i][j] = 100;
                 }
+                else if(a[i][j]>=151 && a[i][j]<=249)
+                {
+                    a[i][j] = 200;
+                }
+                else if(a[i][j]>=250 && a[i][j]<=350)
+                {
+                    a[i][j] = 300;
+                }
+                else if(a[i][j]>=351 && a[i][j]<=449)
+                {
+                    a[i][j] = 400;
+                }
+                else if(a[i][j]>=450 && a[i][j]<=549)
+                {
+                    a[i][j] = 500;
+                }
+                }
             }
+            return a;
         }
-        return a;
-
-    }
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int m = scan.nextInt();
