@@ -4,13 +4,11 @@ final class InputValidator {
     /**
      *@param str value
      */
-    private String data;
     private int len;
     /**
      * @param str value
      */
     InputValidator(final String str) {
-        data = str;
         len = str.length();
     }
     /**
@@ -41,4 +39,5 @@ final class Solution {
         System.out.println(i.validateData());
     }
 }
+
 
