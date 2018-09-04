@@ -210,7 +210,7 @@ public class List {
      * or -1 if this list does not contain the element.
      */
     public int indexOf(int item) {
-       	for(int i=1; i<=a.length;i++){
+       	for(int i=0; i<a.length;i++){
         	if (a[i]==item) {
         		return i;
         	}
