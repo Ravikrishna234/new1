@@ -60,9 +60,9 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-    
-    
-
+    public List(int n) {
+        list = new int[n];
+    }
     public List() {
 
         // what are the two variables to be initialized here?
@@ -70,7 +70,7 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new int[50];
+        list = new int[10];
 
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
