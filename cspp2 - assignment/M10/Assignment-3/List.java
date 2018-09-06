@@ -39,20 +39,17 @@ public class List<E> {
         if(size < list.length) {
             list[size++] = item;
     }
-    else {
-        resize(list.length);
-    }
+    resize(list.length);
     }
     /*Inserts all the elements of specified int 
     array to the end of list*/
     public void addAll(E[] items) {
         if (items.length > (list.length-size)) {
             resize(list.length);
-        } else {
+        }
             for(E i:items)
             {
                 list[size++] = i;
-            }
             }
         }
     /*
