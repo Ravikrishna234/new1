@@ -120,16 +120,27 @@ public class StringList implements StringListInterface{
      * The method returns void (nothing)
      */
     public void add(String item) {
+        if (size < list.length) {
         list[size++] = item;
+    } else {
+        resize(list.length);
+    }
        
     }
    
     public void addAll(String[] items) {
+        if(size < list.length) {
         for(String i:items) {
             list[size++] = i;
         }
+    } else {
+        resize(list.length);
+    }
 		
 	}
+    public void resize(int item) {
+        list = Arrays.copyOf(list,item*2);
+    }
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
