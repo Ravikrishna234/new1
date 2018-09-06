@@ -7,12 +7,12 @@ final class Student {
      * @details [long description]
      */
     private String name;
-    /** 
-     * @param name [description]
+    /**
+     * @param name1 [description]
      */
-    Student(final String name) {
+    Student(final String name1) {
     //A constructor used to initialize the instance variables
-        this.name = name;
+        this.name = name1;
     }
     /**
      * @return value
@@ -21,11 +21,19 @@ final class Student {
     //Getter method which returns the value of instance variable
         return this.name;
     }
-    @Override
-    /** 
+    /**
+     * @brief [brief description]
+     * @details [long description]
+     * @return [description]
+     */
+    public int hashCode() {
+        return 0;
+    }
+    /**
      * @param other value
      * @return value
      */
+    @Override
     public boolean equals(final Object other) {
     //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
@@ -34,64 +42,71 @@ final class Student {
         Student that = (Student) other;
         return this.getName().equals(that.getName());
     }
+    /**
+     * @brief [brief description]
+     * @details [long description]
+     * @return [description]
+     */
     public String toString() {
         return this.name;
     }
 }
-final class Solution {
+/**
+ * class for Solution.
+ */
+public final class Solution {
     /**
-     * @brief [brief description]
-     * @details [long description]
+     * Constructor.
      */
-    private Solution() { }
+    private Solution() {
+    }
     /**
      * @param args value
      */
-    public static void main(final String[] args) {
+public static void main(final String[] args) {
 Scanner stdin = new Scanner(new BufferedInputStream(System.in));
 String objectType = stdin.nextLine();
-switch (objectType) {
-    case "S":
-List<String> listString = new List();
-    while (stdin.hasNext()) {
-        String line = stdin.nextLine();
-    String[] tokens = line.split(" ");
-    switch (tokens[0]) {
-    case "add":
-        listString.add(tokens[1]);
-        break;
-case "addAll":
-    if (tokens.length == 2) {
-    String[] t1 = tokens[1].split(",");
-    listString.addAll(t1);
-    }
-    break;
-case "size":
-System.out.println(listString.size());
-break;
-case "print":
-    System.out.println(listString);
-    break;
-case "remove":
-    listString.remove(Integer.parseInt(tokens[1]));
-    break;
-case "indexOf":
-    System.out.println(listString.indexOf(tokens[1]));
-    break;
-case "get":
+            switch (objectType) {
+                case "S":
+                List<String> listString = new List();
+                while (stdin.hasNext()) {
+                String line = stdin.nextLine();
+                String[] tokens = line.split(" ");
+                switch (tokens[0]) {
+                case "add":
+                    listString.add(tokens[1]);
+                break;
+                case "addAll":
+                    if (tokens.length == 2) {
+                        String[] t1 = tokens[1].split(",");
+                        listString.addAll(t1);
+                    }
+                    break;
+                case "size":
+                    System.out.println(listString.size());
+                    break;
+                case "print":
+                    System.out.println(listString);
+                    break;
+                case "remove":
+                    listString.remove(Integer.parseInt(tokens[1]));
+                    break;
+                case "indexOf":
+                    System.out.println(listString.indexOf(tokens[1]));
+                    break;
+                case "get":
     System.out.println(listString.get(Integer.parseInt(tokens[1])));
-    break;
-case "contains":
-    System.out.println(listString.contains(tokens[1]));
-    break;
-default:
-break;
+            break;
+                case "contains":
+                    System.out.println(listString.contains(tokens[1]));
+                    break;
+              default:
+                break;
     }
 }
 case "I":
     List<Integer> listInteger = new List();
     while (stdin.hasNext()) {
-// read the line
     String line = stdin.nextLine();
     String[] tokens = line.split(" ");
 switch (tokens[0]) {
@@ -102,7 +117,7 @@ case "addAll":
     if (tokens.length == 2) {
     String[] t1 = tokens[1].split(",");
     Integer[] temp = new Integer[t1.length];
-    for (int i = 0;i < temp.length; i++) {
+    for (int i = 0; i < temp.length; i++) {
         temp[i] = Integer.parseInt(t1[i]);
     }
         listInteger.addAll(temp);
@@ -142,7 +157,7 @@ break;
 case "addAll":
     if (tokens.length == 2) {
         String[] t1 = tokens[1].split(",");
-        Float temp[] = new Float[t1.length];
+        Float[] temp = new Float[t1.length];
     for (int i = 0; i < t1.length; i++) {
         temp[i] = Float.parseFloat(t1[i]);
 }
@@ -303,6 +318,8 @@ default:
 break;
 }
 }
+default:
+break;
         }
     }
 }
