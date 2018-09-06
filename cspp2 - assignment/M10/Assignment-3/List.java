@@ -37,8 +37,7 @@ public class List<E> {
      */
     public void add(E item) {
         if(size < list.length) {
-
-        list[(size++)] = item;
+            list[size++] = item;
     }
     else {
         resize(list.length);
@@ -50,12 +49,12 @@ public class List<E> {
         if (items.length > (list.length-size)) {
             resize(list.length);
         } else {
-            for(int i = 0; i<items.length; i++) {
-                list[size] = items[i];
-                size++;
+            for(E i:items)
+            {
+                list[size++] = i;
+            }
             }
         }
-    }
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
