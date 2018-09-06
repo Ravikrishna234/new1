@@ -280,7 +280,7 @@ public class List {
         The method returns void (nothing)
      */
     public void add(int index,int item) {
-        if (index > 0) {
+        if (index >= 0) {
          for (int i=size+1;i>index;i--) {
             list[i] = list[i-1];
 
