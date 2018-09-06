@@ -1,7 +1,7 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 /**STRINGLIST.**/
-public class Solution {
+final class Solution {
     /**
      * @brief [brief description]
      * @details [long description]
