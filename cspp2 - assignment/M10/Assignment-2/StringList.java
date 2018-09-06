@@ -139,7 +139,7 @@ public class StringList implements StringListInterface{
 		
 	}
     public void resize(int item) {
-        list = Arrays.copyOf(list,item*2);
+        list = Arrays.copyOf(list,list.length*2);
     }
     /*
      * The size method returns the value of the size.
