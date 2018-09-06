@@ -36,14 +36,18 @@ public class List<E> {
      * to the list.
      */
     public void add(E item) {
-        //Inserts the specified element at the end of the list.
-        //You can modify the code in this method.
+        if(size < list.length) {
+
         list[(size++)] = item;
+    }
+    else {
+        resize(list.length);
+    }
     }
     /*Inserts all the elements of specified int 
     array to the end of list*/
     public void addAll(E[] items) {
-        if (items.length > list.length) {
+        if (items.length > (list.length-size)) {
             resize(list.length);
         } else {
             for(int i = 0; i<items.length; i++) {
