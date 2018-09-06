@@ -2,8 +2,14 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 
 public class Solution {
-	
-
+    /**
+     * @brief [brief description]
+     * @details [long description]
+     */
+    private Solution() { }
+    /** 
+     * @param args value
+     */
 	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         StringList sl = new StringList();
