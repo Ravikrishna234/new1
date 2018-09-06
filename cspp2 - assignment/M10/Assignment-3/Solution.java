@@ -1,32 +1,36 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 /**GENERICS.**/
-class Student {
+final class Student {
+    /**
+     * @brief [brief description]
+     * @details [long description]
+     */
     private String name;
-    
-    public Student(final String name) {//A constructor used to initialize the instance variables
+    /** 
+     * @param name [description]
+     */
+    Student(final String name) {
+    //A constructor used to initialize the instance variables
         this.name = name;
     }
-
-    public String getName() {//Getter method which returns the value of instance variable
+    public String getName() {
+    //Getter method which returns the value of instance variable
         return this.name;
     }
-
     @Override
-    public boolean equals(final Object other) { //This method is to check if two students names are equal or not
+    public boolean equals(final Object other) {
+    //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
         }
-
         Student that = (Student) other;
         return this.getName().equals(that.getName());
     }
-
     public String toString() {
         return this.name;
     }
 }
-
 final class Solution {
     /**
      * @param args value
