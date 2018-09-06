@@ -150,7 +150,13 @@ public class List<E> {
      * the item exists and otherwise false
      */
     public boolean contains(E item) {
-		return indexOf(item) == -1;
+	   for (int i=0;i<size;i++)
+       {
+        if(list.equals(item)) {
+            return true;
+        }
+       }
+       return false;
     }
     public int indexOf(E item) {
        
