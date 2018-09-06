@@ -119,7 +119,7 @@ public class StringList implements StringListInterface{
      * 
      * The method returns void (nothing)
      */
-    public void add(String item) {
+    public void add(final String item) {
         if (size < list.length) {
         list[size++] = item;
     } else {
@@ -128,18 +128,17 @@ public class StringList implements StringListInterface{
        
     }
    
-    public void addAll(String[] items) {
-        if(items.length > list.length) {
+    public void addAll(final String[] items) {
+        if (items.length > list.length) {
             resize(list.length);
         }
-        for(String i:items) {
+        for (String i : items) {
             list[size++] = i;
+        }
 
         
     }
-		
-	}
-    public void resize(int item) {
+    public void resize(final int item) {
         list = Arrays.copyOf(list,item*2);
     }
     /*
@@ -174,7 +173,7 @@ public class StringList implements StringListInterface{
      * The method returns void (nothing)
      */
 
-    public void remove(int index) {
+    public void remove(final int index) {
         if(index >= 0 && index < size) {
             for(int i = index; i < size -1; i++) {
                 list[i] = list[i+1];
@@ -197,7 +196,7 @@ public class StringList implements StringListInterface{
      * How do we check if the position is greater than the 
      * number of items in the list? Would size variable be useful?
      */
-    public String get(int index) {
+    public String get(final int index) {
         if (index < 0 || index > size) {
             return "null";
         } else {
@@ -246,7 +245,7 @@ public class StringList implements StringListInterface{
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
-    public boolean contains(String item) {
+    public boolean contains(final String item) {
         return indexOf(item) == -1;
         
     }
@@ -256,7 +255,7 @@ public class StringList implements StringListInterface{
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
-    public int indexOf(String item) {
+    public int indexOf(final String item) {
         for (int i = 0; i < size ; i++)
         {
             if (list[i] == item) {
