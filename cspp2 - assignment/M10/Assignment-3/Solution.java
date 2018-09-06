@@ -84,10 +84,10 @@ case "get":
 case "contains":
     System.out.println(listString.contains(tokens[1]));
     break;
+default:
+break;
     }
 }
-break;
-
 case "I":
     List<Integer> listInteger = new List();
     while (stdin.hasNext()) {
@@ -126,10 +126,10 @@ case "get":
 case "contains":
     System.out.println(listInteger.contains(Integer.parseInt((tokens[1]))));
     break;
-}
-}
+default:
 break;
-
+}
+}
 case "F"://This case will be executed for Float type list
     List<Float> listFloat = new List();
 while (stdin.hasNext()) {
@@ -167,9 +167,10 @@ case "get":
 case "contains":
     System.out.println(listFloat.contains(Float.parseFloat(tokens[1])));
     break;
-}
-}
+default:
 break;
+}
+}
 
 case "C":
 List<Character> listCharacter = new List();
@@ -210,10 +211,10 @@ case "get":
 case "contains":
     System.out.println(listCharacter.contains(tokens[1].charAt(0)));
     break;
-}
-}
+default:
 break;
-
+}
+}
 case "D":
 List<Double> listDouble = new List();
 while (stdin.hasNext()) {
@@ -253,6 +254,8 @@ case "get":
 case "contains":
     System.out.println(listDouble.contains(Double.parseDouble(tokens[1])));
     break;
+default:
+break;
 }
 }
 break;
@@ -296,11 +299,10 @@ case "get":
 case "contains":
     System.out.println(listStudent.contains(new Student(tokens[1])));
     break;
-                    }
-                }
-                break;
-            default:
-            break;
+default:
+break;
+}
+}
         }
     }
 }
