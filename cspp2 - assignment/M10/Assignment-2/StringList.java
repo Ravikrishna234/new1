@@ -129,12 +129,13 @@ public class StringList implements StringListInterface{
     }
    
     public void addAll(String[] items) {
-        if(items.length < list.length - size) {
+        if(items.length > list.length) {
+            resize(list.length);
+        }
         for(String i:items) {
             list[size++] = i;
-        }
-    } else {
-        resize(list.length);
+
+        
     }
 		
 	}
