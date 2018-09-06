@@ -129,7 +129,7 @@ public class StringList implements StringListInterface{
     }
    
     public void addAll(String[] items) {
-        if(size < list.length) {
+        if(items.length < list.length) {
         for(String i:items) {
             list[size++] = i;
         }
@@ -139,7 +139,7 @@ public class StringList implements StringListInterface{
 		
 	}
     public void resize(int item) {
-        list = Arrays.copyOf(list,list.length*2);
+        list = Arrays.copyOf(list,item*2);
     }
     /*
      * The size method returns the value of the size.
