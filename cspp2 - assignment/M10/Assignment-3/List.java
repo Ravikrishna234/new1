@@ -86,7 +86,7 @@ public class List<E> {
      * The method returns void (nothing)
      */
     public void remove(int index) {
-        if (index >=0 || index <size) {
+        if (index >=0 && index <size) {
             for(int i=index;i<size-1;i++) {
                 list[i] = list[i+1];
             }
@@ -134,6 +134,7 @@ public class List<E> {
      *
      */
     public String toString() {
+        if(size == 0) { return "[]"; }
         String str = "[";
         for(int i=0;i<size-1;i++)
         {
