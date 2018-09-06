@@ -10,7 +10,7 @@ public class Solution {
     /** 
      * @param args value
      */
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         StringList sl = new StringList();
         StringListInterface l=(StringListInterface)sl;//Typecasting is done for StringListInterface
@@ -25,10 +25,10 @@ public class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-	                l.add(tokens[1]);
+                    l.add(tokens[1]);
                 break;
                 case "addAll":
-                if(tokens.length==2){
+                if (tokens.length == 2){
                 String[] t1 = tokens[1].split(",");
                 l.addAll(t1);
                 }
@@ -60,5 +60,5 @@ public class Solution {
                 break;
             }
         }
-	}
+    }
 }
