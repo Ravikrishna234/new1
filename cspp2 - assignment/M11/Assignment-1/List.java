@@ -307,11 +307,9 @@ public class List {
         }
     }
     if (c == list1.size) {
-            return true;
+        return true;
     }
-    else {
     return false;
-}
 }
     /*
     * Removes all the elements from list
@@ -431,5 +429,6 @@ public class List {
         }
     }
 }
+
 
 
