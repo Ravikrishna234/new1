@@ -305,7 +305,7 @@ public class List {
         }
         }
     }
-    return false;
+    return true;
     }
     /*
     * Removes all the elements from list
