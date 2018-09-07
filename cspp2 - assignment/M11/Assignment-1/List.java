@@ -266,7 +266,7 @@ public class List {
     public List subList(int start, int end) 
     {
     if (start <= -1 || end <= -1 || start > end) {
-    		System.out.println("Index out of Bounds Exception");
+    		System.out.println("Index Out of Bounds Exception");
     		return null;
     }
     List ls = new List(end-start);
