@@ -298,7 +298,7 @@ public class List {
     if (this.size != list1.size) {
         return false;
     }
-    int c = 0;
+    int c = 1;
     for (int i = 0; i < this.size; i++) {
         for (int j = 0; j < list1.size; j++) {
             if (this.list[i] != list1.list[j]) {
