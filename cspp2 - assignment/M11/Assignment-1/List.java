@@ -276,7 +276,7 @@ public class List {
      * @return [description]
      */
     public List subList(final int start, final int end) {
-    if (start <= -1 || end <= -1 || start > end) {
+            if (start <= -1 || end <= -1 || start > end || end < start || end > size) {
             System.out.println("Index Out of Bounds Exception");
             return null;
     }
@@ -295,6 +295,7 @@ public class List {
      * @return [description]
      */
     public boolean equals(final List list1) {
+    //this.toString.equals(list1.toString()); /*calls tostring*/
     if (this.size != list1.size) {
         return false;
     }
