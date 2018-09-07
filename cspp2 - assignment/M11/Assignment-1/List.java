@@ -301,7 +301,7 @@ public class List {
     int c = 0;
     for (int i = 0; i < this.size; i++) {
         for (int j = 0; j < list1.size; j++) {
-            if (this.list[i] == list1.list[i]) {
+            if (this.list[i] == list1.list[j]) {
                 c++;
                 }
         }
