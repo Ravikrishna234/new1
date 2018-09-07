@@ -275,7 +275,7 @@ public class List {
      * @return [description]
      */
     public List subList(final int start, final int end) {
-            if (start <= -1 || end <= -1 || start > end || end < start || size == 0) {
+if (start <= -1 || end <= -1 || start > end || end < start || size == 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
     }
@@ -299,7 +299,7 @@ public class List {
         return false;
     }
     for (int i = 0; i < this.size; i++) {
-        if(list[i] != list1.list[i]) {
+        if (list[i] != list1.list[i]) {
             return false;
         }
         }
