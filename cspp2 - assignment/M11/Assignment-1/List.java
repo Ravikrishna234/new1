@@ -110,7 +110,6 @@ public class List {
      * @return size
      */
     public int size() {
-        // replace the code below to implement the size method
         return size;
     }
 
@@ -347,7 +346,12 @@ public class List {
                     }
                 break;
                 case "size":
-                    System.out.println(l.size());
+                    int size = l.size();
+                    if (size > 0) {
+                    System.out.println(size);
+                    } else {
+                        System.out.println("Index Out of Bounds Exception");
+                    }
                 break;
                 case "print":
                     System.out.println(l);
