@@ -299,11 +299,12 @@ public class List {
         return false;
     }
     for (int i = 0; i < this.size; i++) {
-        if (this.list[i] != list1.list[i]) {
-            return false;
+        for (int j = 0; j < list1.size; j++)
+        if (this.list[i] == list1.list[j]) {
+            return true;
         }
     }
-    return true;
+    return false;
     }
     /*
     * Removes all the elements from list
