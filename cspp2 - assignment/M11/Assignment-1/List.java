@@ -299,19 +299,14 @@ public class List {
     if (this.size != list1.size) {
         return false;
     }
-    int c = 0;
     for (int i = 0; i < this.size; i++) {
-        for (int j = 0; j < list1.size; j++) {
-            if (this.list[i] == list1.list[j]) {
-                c++;
-                }
+        if(list[i] != list1.list[i]) {
+            return false;
         }
-    }
-    if (c == list1.size) {
+        }
         return true;
     }
-    return false;
-}
+
     /*
     * Removes all the elements from list
     * Think about this case and make the method
