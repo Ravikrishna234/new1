@@ -187,8 +187,9 @@ public class List<E> {
      */
     public List subList(int n, int n2) {
 
-        if (n <= -1 || n2 <= -1 || n2 < n || n > n2 || n2 > size || size == 0) {
+        if (n < 0 || n2 < 0 || n > n2 || n > size || n2 > size || n == n2) {
             System.out.println("Index Out of Bounds Exception");
+            return null;
         }
         List<E> ls = new List(n2-n);
         for (int i = n; i < n2; i++) {
