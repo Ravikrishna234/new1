@@ -299,9 +299,10 @@ public class List {
         return false;
     }
     for (int i = 0; i < this.size; i++) {
-        for (int j = 0; j < list1.size; j++)
-        if (this.list[i] == list1.list[j]) {
-            return true;
+        for (int j = 0; j < list1.size; j++) {
+            if (this.list[i] != list1.list[j]) {
+            return false;
+        }
         }
     }
     return false;
