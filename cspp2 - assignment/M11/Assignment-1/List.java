@@ -346,12 +346,7 @@ public class List {
                     }
                 break;
                 case "size":
-                    int size = l.size();
-                    if (size > 0) {
-                    System.out.println(size);
-                    } else {
-                        System.out.println("Index Out of Bounds Exception");
-                    }
+                    System.out.println(l.size());
                 break;
                 case "print":
                     System.out.println(l);
