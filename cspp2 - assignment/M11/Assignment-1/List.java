@@ -306,7 +306,7 @@ public class List {
                 }
         }
     }
-    if (c == this.size) {
+    if (c == list1.size) {
     return true;
     }
     return false;
