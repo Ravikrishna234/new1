@@ -87,10 +87,10 @@ public void add(int[] items) {
 	}
 public Set intersection(Set t) {
 	Set intersection = new Set();
-	for(int i = 0; i < t.size(); i++) {
-		for(int j = 0; j < size; j++) {
-			if(set[j] == t.get(i)) {
-				intersection.add(t.get(i));
+	for(int i = 0; i < size; i++) {
+		for(int j = 0; j < t.size(); j++) {
+			if(set[i] == t.get(j)) {
+				intersection.add(t.get(j));
 			}
 
 		}
