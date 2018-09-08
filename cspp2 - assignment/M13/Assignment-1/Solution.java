@@ -163,13 +163,16 @@ public Set retainAll(final int[] items) {
      * @return a
      */
     public int[][] cartesianProduct(final Set s) {
+        Set s1 = new Set();
         int[][] a = new int[size * s.size][2];
-        for (int i = 0; i < size; i++) {
-            for(int j = 0; j < s.size(); j++) {
-                a[i][j] = set[i];
-                a[i][j] = s.get(j);
+        for (int i = 0; i < a.length; i++) {
+            int j;
+            for (j = 0; j < 1; j++) {
+                a[i][j] = this.set[i];
+
             }
-            }
+            a[i][j] = s.get(j);
+        }
         return a;
     }
 }
@@ -267,3 +270,4 @@ public final class Solution {
         }
     }
 }
+
