@@ -99,10 +99,10 @@ public Set intersection(Set t) {
 }
 public Set retainAll(int[] items) {
 	Set retainAll = new Set();
-	for (int i = 0; i < items.length; i++) {
-		for(int j = 0; j < size; j++) {
-			if(items[i] == set[j]) {
-				retainAll.add(items[i]);
+	for (int i = 0; i < size; i++) {
+		for(int j = 0; j < items.length; j++) {
+			if(set[i] == items[j]) {
+				retainAll.add(items[j]);
 			}
 		}
 	}
