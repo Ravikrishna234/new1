@@ -44,19 +44,22 @@ public void add(int element) {
 	if(size == set.length) {
 		resize(set.length);
 	}
-	boolean flag = false;
-	for(int i = 0; i < set.length; i++) {
-		if(set[i] == element) {
-			flag = false;
-		}
-		else {
-			flag = true;
-		}
-	}
-	if(flag == true) {
+	if(contains(element) == false) {
 		set[size++] = element;
 	}
 }
+	// boolean flag = false;
+	// for(int i = 0; i < set.length; i++) {
+	// 	if(set[i] == element) {
+	// 		flag = false;
+	// 	}
+	// 	else {
+	// 		flag = true;
+	// 	}
+	// }
+	// if(flag == true) {
+	// 	set[size++] = element;
+	// }
 public void resize(int item) {
 	set = Arrays.copyOf(set,item * 2);
 }
@@ -64,24 +67,28 @@ public void add(int[] items) {
 	if(size == set.length) {
 		resize(set.length);
 	}
-	boolean flag = false;
-	for (int j : items) {
-		for(int i = 0; i < set.length;i++) {
-			if(set[i] == j) {
-				flag = false;
-			}else {
-				flag = true;
-			}
-
-			}
-			if(size == set.length) {
-				resize(set.length);
-			}
-			if(flag == true) {
-			set[size++] = j;
-		}
+	for(int i : items) {
+		if(contains(i) == false) {
+			set[size++] = i;
 		}
 	}
+}
+	// boolean flag = false;
+	// for (int j : items) {
+	// 	for(int i = 0; i < set.length;i++) {
+	// 		if(set[i] == j) {
+	// 			flag = false;
+	// 		}else {
+	// 			flag = true;
+	// 		}
+
+	// 		}
+	// 		if(size == set.length) {
+	// 			resize(set.length);
+	// 		}
+	// 		if(flag == true) {
+	// 		set[size++] = j;
+	// 	}
 	public int get(int index) {
 		return set[index];
 	}
