@@ -116,7 +116,7 @@ public Set retainAll(int[] items) {
 	return retainAll;
 	}
 	public int[][] cartesianProduct(Set s) {
-		int[][] a = new int[2][size];
+		int[][] a = new int[2][size*size];
 		for(int i = 0; i < size; i++) {
 			int j = 0;
 			for(j = 0; j < 1; j++){
