@@ -7,128 +7,175 @@ import java.util.Arrays;
  * @author :
  */
 class Set {
+    /**
+     * array list.
+     */
     private int[] set;
+    /**
+     * size declaration.
+     */
     private int size;
-public Set() {
-	size = 0;
-	final int len = 10;
-	set = new int[len];
+    /**
+     * constructor.
+     */
+    Set() {
+        size = 0;
+        final int len = 10;
+        set = new int[len];
 }
-public int size(){
-	return size;
+/**
+ * @return value
+ */
+public int size() {
+    return size;
 }
-public Set(int capacity) {
-	set = new int[capacity];
-	size = 0;
+    /**
+     * @param capacity to give specific size.
+     */
+    Set(final int capacity) {
+        set = new int[capacity];
+        size = 0;
 }
-public boolean contains(int value) {
-	for(int i = 0; i < size;i++) {
-		if(set[i] == value) {
-			return true;
-		}
-	}
-	return false;
+/**
+ * @param value [description]
+ * @return flag
+ */
+public boolean contains(final int value) {
+    for (int i = 0; i < size; i++) {
+        if (set[i] == value) {
+            return true;
+        }
+    }
+    return false;
 }
+/**
+ * @return str
+ */
 public String toString() {
-	if(size == 0) {
-		return "{}";
-	}
-		String str = "{";
-		for(int i= 0;i < size - 1;i++) {
-			str += set[i] + ", ";
-		}
-		str += set[size - 1] + "}";
-		return str;
+    if (size == 0) {
+        return "{}";
+    }
+        String str = "{";
+        for (int i = 0; i < size - 1; i++) {
+            str += set[i] + ", ";
+        }
+        str += set[size - 1] + "}";
+        return str;
 }
-public void add(int element) {
-	if(size == set.length) {
-		resize(set.length);
-	}
-	if(contains(element) == false) {
-		set[size++] = element;
-	}
+/**
+ * @param element value
+ */
+public void add(final int element) {
+    if (size == set.length) {
+        resize(set.length);
+    }
+    if (!contains(element)) {
+        set[size++] = element;
+    }
 }
-	// boolean flag = false;
-	// for(int i = 0; i < set.length; i++) {
-	// 	if(set[i] == element) {
-	// 		flag = false;
-	// 	}
-	// 	else {
-	// 		flag = true;
-	// 	}
-	// }
-	// if(flag == true) {
-	// 	set[size++] = element;
-	// }
-public void resize(int item) {
-	set = Arrays.copyOf(set,item * 2);
+    // boolean flag = false;
+    // for(int i = 0; i < set.length; i++) {
+    //  if(set[i] == element) {
+    //      flag = false;
+    //  }
+    //  else {
+    //      flag = true;
+    //  }
+    // }
+    // if(flag == true) {
+    //  set[size++] = element;
+    // }
+/**
+ * @param item value
+ */
+public void resize(final int item) {
+    set = Arrays.copyOf(set, item * 2);
 }
-public void add(int[] items) {
-	if(size == set.length) {
-		resize(set.length);
-	}
-	for(int i : items) {
-		if(contains(i) == false) {
-			set[size++] = i;
-		}
-	}
+/**
+ * @param items value
+ */
+public void add(final int[] items) {
+    if (size == set.length) {
+        resize(set.length);
+    }
+    for (int i : items) {
+        if (!contains(i)) {
+            set[size++] = i;
+        }
+    }
 }
-	// boolean flag = false;
-	// for (int j : items) {
-	// 	for(int i = 0; i < set.length;i++) {
-	// 		if(set[i] == j) {
-	// 			flag = false;
-	// 		}else {
-	// 			flag = true;
-	// 		}
+    // boolean flag = false;
+    // for (int j : items) {
+    //  for(int i = 0; i < set.length;i++) {
+    //      if(set[i] == j) {
+    //          flag = false;
+    //      }else {
+    //          flag = true;
+    //      }
 
-	// 		}
-	// 		if(size == set.length) {
-	// 			resize(set.length);
-	// 		}
-	// 		if(flag == true) {
-	// 		set[size++] = j;
-	// 	}
-	public int get(int index) {
-		return set[index];
-	}
-public Set intersection(Set t) {
-	Set intersection = new Set();
-	for(int i = 0; i < size; i++) {
-		for(int j = 0; j < t.size(); j++) {
-			if(set[i] == t.get(j)) {
-				intersection.add(t.get(j));
-			}
+    //      }
+    //      if(size == set.length) {
+    //          resize(set.length);
+    //      }
+    //      if(flag == true) {
+    //      set[size++] = j;
+    //  }
+/**
+ * @param index value
+ * @return index
+ */
+    public int get(final int index) {
+        return set[index];
+    }
+    /**
+     * @param t [description]
+     * @return intersection
+     */
+public Set intersection(final Set t) {
+    Set intersection = new Set();
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < t.size(); j++) {
+            if (set[i] == t.get(j)) {
+                intersection.add(t.get(j));
+            }
 
-		}
-	}
-	return intersection;
+        }
+    }
+    return intersection;
 }
-public Set retainAll(int[] items) {
-	Set retainAll = new Set();
-	for (int i = 0; i < size; i++) {
-		for(int j = 0; j < items.length; j++) {
-			if(set[i] == items[j]) {
-				retainAll.add(items[j]);
-			}
-		}
-	}
-	return retainAll;
-	}
-	public int[][] cartesianProduct(Set s) {
-		int[][] a = new int[size * s.size][2];
-		for(int i = 0; i < size; i++) {
-			int j = 0;
-			while(j<=1){
-				a[i][j] = set[i];
-				j++;
-			}
-			a[i][j] = s.get(i);
+/**
+ * @param items values
+ * @return retainAll
+ */
+public Set retainAll(final int[] items) {
+    Set retainAll = new Set();
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < items.length; j++) {
+            if (set[i] == items[j]) {
+                retainAll.add(items[j]);
+            }
+        }
+    }
+    return retainAll;
+    }
+    /**
+     * @param s value
+     * @return a
+     */
+    public int[][] cartesianProduct(final Set s) {
+        int[][] a = new int[size * s.size][2];
+        for (int i = 0; i < size; i++) {
+            int j = 0;
+            for (j = 0; j < 2; j++) {
+                a[i][j] = set[i];
+                a[i][j] = s.get(i);
+            }
 
-		}
-		return a;
-	}
+        }
+        return a;
+    }
 }
+/**CLASS.**/
 public final class Solution {
     /**
      * Constructs the object.
