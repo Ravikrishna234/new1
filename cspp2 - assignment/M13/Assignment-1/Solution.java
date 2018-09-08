@@ -119,10 +119,12 @@ public Set retainAll(int[] items) {
 		int[][] a = new int[size * s.size][2];
 		for(int i = 0; i < size; i++) {
 			int j = 0;
-			for(j = 0; j < 1; j++){
+			while(j<=1){
 				a[i][j] = set[i];
+				j++;
 			}
 			a[i][j] = s.get(i);
+
 		}
 		return a;
 	}
