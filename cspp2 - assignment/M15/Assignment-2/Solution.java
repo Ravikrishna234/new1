@@ -23,6 +23,9 @@ class EmptyException extends Exception {
         super(s);
     }
 }
+/**
+ * Sorted class.
+ */
 class SortedSet extends Set {
     /**
      * sort method.
