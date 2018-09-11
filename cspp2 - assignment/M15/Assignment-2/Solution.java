@@ -5,20 +5,23 @@ import java.util.Arrays;
  *class for sorted set.
  */
 class InvalidException extends Exception {
-	/**
-	 * @param s value
-	 */
-	InvalidException(final String s) {
-		super(s);
-	}
+    /**
+     * @param s value
+     */
+    InvalidException(final String s) {
+        super(s);
+    }
 }
+/**
+ * Exception class.
+ */
 class EmptyException extends Exception {
-	/**
-	 * @param s value
-	 */
-	EmptyException(final String s) {
-		super(s);
-	}
+    /**
+     * @param s value
+     */
+    EmptyException(final String s) {
+        super(s);
+    }
 }
 class SortedSet extends Set {
     /**
@@ -51,9 +54,9 @@ class SortedSet extends Set {
      * @param      item  The item
      */
     public void add(final int item) {
-    	if (size == set.length) {
-    		resize();
-    	}
+        if (size == set.length) {
+            resize();
+        }
         if (!contains(item)) {
             set[size++] = item;
         }
@@ -61,9 +64,10 @@ class SortedSet extends Set {
     }
     /**
      * subSet method.
-     * @param      fromElement  The from element
-     * @param      toElement    To element
-     * @return     { description_of_the_return_value }
+     * @param fromElement The from element
+     * @param toElement To element
+     * @throws InvalidException Exception
+     * @return value
      */
     public int[] subSet(final int fromElement, final int toElement) throws InvalidException{
         if (fromElement > toElement) {
@@ -86,6 +90,7 @@ class SortedSet extends Set {
     /**
      * headSet method.
      * @param      toElement  To element
+     * @throws EmptyException Exception
      * @return     { description_of_the_return_value }
      */
     public int[] headSet(final int toElement) throws EmptyException {
@@ -98,14 +103,15 @@ class SortedSet extends Set {
             }
         }
         if (tmp <= 0) {
-        	throw new EmptyException("Set Empty Exception");
+            throw new EmptyException("Set Empty Exception");
         }
 
         return Arrays.copyOf(result,tmp);
     }
     /**
      * last method.
-     * @return     { description_of_the_return_value }
+     * @throws EmptyException Exception
+     * @return { description_of_the_return_value }
      */
     public int last() throws EmptyException {
         if (size == 0) {
@@ -213,7 +219,7 @@ public final class Solution {
                 System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
                 break;
             case "subSet":
-            	try {
+                try {
                 if (tokens.length != 2) {
                     break;
                 }
@@ -226,11 +232,11 @@ public final class Solution {
                 }
             }
             catch (Exception e) {
-            	System.out.println("Invalid Arguments to Subset Exception");
+                System.out.println("Invalid Arguments to Subset Exception");
             }
             break;
             case "headSet":
-            	try {
+                try {
                 if (tokens.length != 2) {
                     break;
                 }
@@ -240,28 +246,28 @@ public final class Solution {
                         "{").replace("]", "}"));
                 }
             } catch (Exception e) {
-            	System.out.println("Set Empty Exception");
+                System.out.println("Set Empty Exception");
             }
             break;
             case "last":
-            	try {
+                try {
                 if (tokens.length != 1) {
                     break;
                 }
                 int temp = s.last();
                 System.out.println(temp);
             } catch (Exception e) {
-            	System.out.println("Set Empty Exception");
+                System.out.println("Set Empty Exception");
                 break;
             }
             case "addAll":
                 if (tokens.length == 2) {
-                	String[] t1 = tokens[1].split(",");
-                	int[] temp = new int[t1.length];
-                	for (int i = 0; i < temp.length; i++) {
-                		temp[i] = Integer.parseInt(t1[i]);
-                	}
-                	s.addAll(temp);
+                    String[] t1 = tokens[1].split(",");
+                    int[] temp = new int[t1.length];
+                    for (int i = 0; i < temp.length; i++) {
+                        temp[i] = Integer.parseInt(t1[i]);
+                    }
+                    s.addAll(temp);
                 }
                 break;
             default:
