@@ -223,7 +223,7 @@ public final class Solution {
                 }
             }
             catch (Exception e) {
-            	System.out.println("Invalid Arguments to subSet Exception");
+            	System.out.println("Invalid Arguments to Subset Exception");
             }
             break;
             case "headSet":
