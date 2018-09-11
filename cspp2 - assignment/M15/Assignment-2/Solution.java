@@ -67,7 +67,7 @@ class SortedSet extends Set {
      */
     public int[] subSet(final int fromElement, final int toElement) throws InvalidException{
         if (fromElement > toElement) {
-            throw new InvalidException("Invalid arguments to subSet Exception");
+            throw new InvalidException("Invalid arguments to Subset Exception");
         }
         int[] result = new int[size];
         int k = 0;
