@@ -5,15 +5,27 @@ import java.util.Arrays;
  * main class.
  */
 class InvalidException extends Exception {
-    InvalidException(String s) {
+    /**
+     * @param s value
+     */
+    InvalidException(final String s) {
         super(s);
     }
 }
+/**
+ * IndexException class.
+ */
 class IndexException extends Exception {
-    IndexException(String s) {
+    /**
+     * @param s value
+     */
+    IndexException(final String s) {
         super(s);
     }
 }
+/**
+ * main class.
+ */
 public class List {
     //Implement all the methods mentioned to build a ListADT
 
@@ -147,6 +159,7 @@ public class List {
     }
     /**
      * @param index [description]
+     * @throws InvalidException value
      */
     public void remove(final int index) throws InvalidException {
         // write the logic for remove here.
@@ -174,9 +187,10 @@ public class List {
     /**
      * @param start value
      * @param end value
+     * @throws IndexException value
      * @return ls
      */
-    public List subList(final int start,final int end) throws IndexException {
+    public List subList(final int start, final int end) throws IndexException {
     if (start <= -1 || end <= -1 || start > end || end < start || size == 0) {
             throw new IndexException("Index Out of Bounds Exception");
     }
@@ -270,7 +284,7 @@ public class List {
      * @brief [brief description]
      * @details [long description]
      */
-    public void clear () {
+    public void clear() {
         size = 0;
     }
     /*
@@ -305,6 +319,7 @@ public class List {
     }
     /**
      * @param items values
+     * @throws InvalidException value
      */
     public void removeAll(final int[] items) throws InvalidException {
         if (items.length > 0) {
@@ -376,8 +391,7 @@ public class List {
             case "remove":
                     try {
                 l.remove(Integer.parseInt(tokens[1]));
-            }
-            catch(Exception e) {
+            } catch (Exception e) {
                 System.out.println("Invalid Position Exception");
             }
                 break;
@@ -401,8 +415,7 @@ public class List {
                     if (object != null) {
                         System.out.println(object);
                     }
-                }
-                catch(Exception e) {
+                } catch (Exception e) {
                         System.out.println("Index Out of Bounds Exception");
 
                 }
@@ -431,8 +444,7 @@ public class List {
                     l.removeAll(a);
 
                 }
-            }
-            catch(Exception e) {
+            } catch (Exception e) {
                     System.out.println("Invalid Position Exception");
             }
             default:
