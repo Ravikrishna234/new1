@@ -38,10 +38,22 @@ class SortedSet extends Set {
         }
     }
     /**
+     * resize method.
+     */
+    private void resize() {
+        //int[] list1 = new list1[2*size]
+        //java.lang.System.arraycopy(list, 0, list1, 0, size);
+        //list = list1;
+        set = Arrays.copyOf(set, 2 * size);
+    }
+    /**
      * add method.
      * @param      item  The item
      */
     public void add(final int item) {
+    	if (size == set.length) {
+    		resize();
+    	}
         if (!contains(item)) {
             set[size++] = item;
         }
