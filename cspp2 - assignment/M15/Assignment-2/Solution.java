@@ -211,7 +211,7 @@ public final class Solution {
                 }
             }
             catch (Exception e) {
-            	System.out.println("Invalid arguments to subSet Exception");
+            	System.out.println("Invalid Arguments to subSet Exception");
             }
             break;
             case "headSet":
