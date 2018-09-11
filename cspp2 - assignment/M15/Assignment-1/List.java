@@ -178,7 +178,7 @@ public class List {
      */
     public List subList(final int start,final int end) throws IndexException {
     if (start <= -1 || end <= -1 || start > end || end < start || size == 0) {
-            throw new IndexException("Index Out Of Bounds Exception");
+            throw new IndexException("Index Out of Bounds Exception");
     }
     List ls = new List(end - start);
     for (int i = start; i < end; i++) {
@@ -398,7 +398,7 @@ public class List {
                     }
                 }
                 catch(Exception e) {
-                        System.out.println("Index Out Of Bounds Exception");
+                        System.out.println("Index Out of Bounds Exception");
 
                 }
                 break;
