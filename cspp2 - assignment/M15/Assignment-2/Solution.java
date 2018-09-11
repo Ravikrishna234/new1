@@ -69,7 +69,8 @@ class SortedSet extends Set {
      * @throws InvalidException Exception
      * @return value
      */
-    public int[] subSet(final int fromElement, final int toElement) throws InvalidException{
+    public int[] subSet(final int fromElement,
+        final int toElement) throws InvalidException {
         if (fromElement > toElement) {
             throw new InvalidException("Invalid arguments to Subset Exception");
         }
@@ -105,8 +106,7 @@ class SortedSet extends Set {
         if (tmp <= 0) {
             throw new EmptyException("Set Empty Exception");
         }
-
-        return Arrays.copyOf(result,tmp);
+        return Arrays.copyOf(result, tmp);
     }
     /**
      * last method.
@@ -230,8 +230,7 @@ public final class Solution {
                     System.out.println(Arrays.toString(object).replace("[",
                         "{").replace("]", "}"));
                 }
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("Invalid Arguments to Subset Exception");
             }
             break;
