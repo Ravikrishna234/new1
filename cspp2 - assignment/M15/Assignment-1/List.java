@@ -241,12 +241,13 @@ public class List {
      * @param items [description]
      */
     public void addAll(final int[] items) {
-        if (items.length > (list.length - size)) {
-            resize();
-        }
+        // if (items.length + size>=(list.length)) {
+        //     resize();
+        // }
         for (int i = 0; i < items.length; i++) {
-            list[size] = items[i];
-            size++;
+            // list[size] = items[i];
+            // size++;
+            add(items[i]);
         }
     }
     /**
