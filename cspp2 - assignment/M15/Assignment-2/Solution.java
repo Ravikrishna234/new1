@@ -88,7 +88,7 @@ class SortedSet extends Set {
      * @param      toElement  To element
      * @return     { description_of_the_return_value }
      */
-    public int[] headSet(final int toElement) {
+    public int[] headSet(final int toElement) throws EmptyException {
         int[] result = new int[size];
         int tmp = 0;
         for (int i = 0; i < size; i++) {
@@ -96,6 +96,9 @@ class SortedSet extends Set {
                 result[i] = set[i];
                 tmp++;
             }
+        }
+        if (tmp <= 0) {
+        	throw new EmptyException("Set Empty Exception");
         }
 
         return Arrays.copyOf(result,tmp);
@@ -227,6 +230,7 @@ public final class Solution {
             }
             break;
             case "headSet":
+            	try {
                 if (tokens.length != 2) {
                     break;
                 }
@@ -235,7 +239,10 @@ public final class Solution {
                     System.out.println(Arrays.toString(obj).replace("[",
                         "{").replace("]", "}"));
                 }
-                break;
+            } catch (Exception e) {
+            	System.out.println("Set Empty Exception");
+            }
+            break;
             case "last":
             	try {
                 if (tokens.length != 1) {
