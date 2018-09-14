@@ -1,5 +1,5 @@
 import java.util.Scanner;
-////////////////////////////////////////////////////////////////////////////
+/**FUNCTIONS.**/
 class Item {
 	String productname;
 	int quantity;
