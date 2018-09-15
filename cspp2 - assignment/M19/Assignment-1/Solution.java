@@ -92,6 +92,7 @@ public final class Solution {
         	 	}
         	 	else if(Integer.parseInt(q1[2]) > 4) {
         	 		System.out.println("Error! Correct answer choice number is out of range for "+q1[0]);
+        	 		return;
         	 	}
         	 }
 
