@@ -65,6 +65,10 @@ public final class Solution {
         // tokenize the question line and create the question object
         // add the question objects to the quiz class"
         int i;
+        if(questionCount == 0) {
+        	System.out.println("Quiz does not have questions");
+        	return;
+        }
          for(i = 0; i < questionCount; i++) {
         	 q1 = s.nextLine().split(":");
         	 c1 = q1;
@@ -78,12 +82,16 @@ public final class Solution {
         	 		System.out.println("Invalid penalty for "+q1[0]);
         	 		return;
         	 	}
+        	 	else if(Integer.parseInt(q1[3]) < 0) {
+        	 		System.out.println("Invalid max marks for "+q1[0]);
+        	 		return;
+        	 	}
         	 }
 
     		 if(i == questionCount) {
      			System.out.println(questionCount+" "+"are added to quiz");
+        }
      }
- }
 
     /**
      * Starts a quiz.
