@@ -63,24 +63,27 @@ public final class Solution {
     public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
-        // add the question objects to the quiz class""
-        if(questionCount>=4) {
+        // add the question objects to the quiz class"
         int i;
          for(i = 0; i < questionCount; i++) {
         	 q1 = s.nextLine().split(":");
         	 c1 = q1;
         	 Quiz iz = new Quiz(q1[0]);
         	 Quiz cz = new Quiz(q1[0],q1[1],q1[2],q1[3],q1[4]);
-     		}
+        	 if(q1[0].equals("")){
+        	 	System.out.println("Error! Malformed question");
+        	 	return;
+        	 }
+        	 	else if(Integer.parseInt(q1[4]) > 0) {
+        	 		System.out.println("Invalid penalty for "+q1[0]);
+        	 		return;
+        	 	}
+        	 }
 
     		 if(i == questionCount) {
      			System.out.println(questionCount+" "+"are added to quiz");
      }
  }
- else {
- 	System.out.println("Error! Correct answer choice number is out of range for question text "+questionCount);
- }
-    }
 
     /**
      * Starts a quiz.
@@ -93,6 +96,7 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
+        String a = s.nextLine();
 }
     /**
      * Displays the score report
