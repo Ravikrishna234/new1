@@ -90,6 +90,9 @@ public final class Solution {
         	 		System.out.println("Invalid max marks for "+q1[0]);
         	 		return;
         	 	}
+        	 	else if(Integer.parseInt(q1[2]) > 4) {
+        	 		System.out.println("Error! Correct answer choice number is out of range for "+q1[0]);
+        	 	}
         	 }
 
     		 if(i == questionCount) {
