@@ -125,9 +125,9 @@ public final class Solution {
         // read the user responses from the console
         // store the user respones in the quiz object
         String a = s.nextLine();
-        for(int j = 0; j < l1.length; j++) {
-        	System.out.println(l1[j]);
-        }
+        //for(int j = 0; j < l1.length; j++) {
+        	//System.out.println(l1[j]);
+        //}
 }
     /**
      * Displays the score report
