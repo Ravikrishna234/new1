@@ -132,9 +132,10 @@ public final class Solution {
         	in[i] = Integer.parseInt(b[1]);
         	size++;
 			}
-			for(int i = 0;i < size;i++) {
-				System.out.println(in[i]);
-			}
+			//for(int i = 0;i < size;i++) {
+				//System.out.println(in[i]);
+
+			//}
 
         //for(int j = 0; j < l1.length; j++) {
         	//System.out.println(l1[j]);
