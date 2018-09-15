@@ -60,6 +60,14 @@ public final class Solution {
      */
     static String[] q1;
     static String[]	c1 = new String[50];
+    static String[]	l1 = new String[50];
+    public static void store(String[] a) {
+    	for(int i = 0; i < a.length;i++) {
+    		l1[i] = a[i];
+    	}
+
+
+    }
     public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
@@ -71,13 +79,16 @@ public final class Solution {
         }
          for(i = 0; i < questionCount; i++) {
         	 q1 = s.nextLine().split(":");
-        	 c1 = q1;
         	 if(q1.length!=5) {
         	 	System.out.println("Error! Malformed question");
         	 	return;
         	 }
         	 Quiz iz = new Quiz(q1[0]);
         	 Quiz cz = new Quiz(q1[0],q1[1],q1[2],q1[3],q1[4]);
+        	 for(int p = 0; p < q1.length;p++) {
+        	 	c1 = q1;
+        	 	store(c1);
+        	 }
         	 if(q1[0].equals("")){
         	 	System.out.println("Error! Malformed question");
         	 	return;
@@ -90,6 +101,7 @@ public final class Solution {
         	 		System.out.println("Invalid max marks for "+q1[0]);
         	 		return;
         	 	}
+
         	 	else if(Integer.parseInt(q1[2]) > 4) {
         	 		System.out.println("Error! Correct answer choice number is out of range for "+q1[0]);
         	 		return;
@@ -113,6 +125,9 @@ public final class Solution {
         // read the user responses from the console
         // store the user respones in the quiz object
         String a = s.nextLine();
+        for(int j = 0; j < l1.length; j++) {
+        	System.out.println(l1[j]);
+        }
 }
     /**
      * Displays the score report
