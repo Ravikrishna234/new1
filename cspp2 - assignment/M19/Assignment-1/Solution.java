@@ -74,7 +74,7 @@ public final class Solution {
         	 c1 = q1;
         	 Quiz iz = new Quiz(q1[0]);
         	 Quiz cz = new Quiz(q1[0],q1[1],q1[2],q1[3],q1[4]);
-        	 if(q1[0].equals("")){
+        	 if(q1[0].equals("")||q1[4].equals("")){
         	 	System.out.println("Error! Malformed question");
         	 	return;
         	 }
