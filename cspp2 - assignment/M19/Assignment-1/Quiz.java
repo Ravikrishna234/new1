@@ -14,6 +14,6 @@ class Quiz {
     		this.penalty = p;
     	}
     	Quiz(String q) {
-    		this.question = q;
+    		this.answer = q;
     	}
     }

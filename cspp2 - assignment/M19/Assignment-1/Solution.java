@@ -124,10 +124,22 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-        String a = s.nextLine();
+        String[] b;
+        int[] in = new int[10];
+        int size = 0;
+        for(int i = 0; i < answerCount; i++) {
+        	b = s.nextLine().split(" ");
+        	in[i] = Integer.parseInt(b[1]);
+        	size++;
+			}
+			for(int i = 0;i < size;i++) {
+				System.out.println(in[i]);
+			}
+
         //for(int j = 0; j < l1.length; j++) {
         	//System.out.println(l1[j]);
         //}
+
 }
     /**
      * Displays the score report
