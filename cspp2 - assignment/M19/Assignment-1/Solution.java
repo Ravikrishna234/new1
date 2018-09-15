@@ -72,9 +72,13 @@ public final class Solution {
          for(i = 0; i < questionCount; i++) {
         	 q1 = s.nextLine().split(":");
         	 c1 = q1;
+        	 if(q1.length!=5) {
+        	 	System.out.println("Error! Malformed question");
+        	 	return;
+        	 }
         	 Quiz iz = new Quiz(q1[0]);
         	 Quiz cz = new Quiz(q1[0],q1[1],q1[2],q1[3],q1[4]);
-        	 if(q1[0].equals("")||q1[4].equals("")){
+        	 if(q1[0].equals("")){
         	 	System.out.println("Error! Malformed question");
         	 	return;
         	 }
