@@ -293,7 +293,7 @@ public final class Solution {
                     quiz.addQuestion(question);
                 }
             }
-            System.out.println(q+" are added to quiz");
+            System.out.println(q+" are added to the quiz");
         } else {
             System.out.println("Quiz does not have questions");
             return;
