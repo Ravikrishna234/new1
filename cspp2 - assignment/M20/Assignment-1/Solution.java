@@ -320,7 +320,7 @@ public final class Solution {
                 for(j = 0; j < question.getChoice().length - 1; j++) {
                     System.out.print(question.getChoice()[j] + "\t");
                 }
-                System.out.print(question.getChoice()[j]);
+                System.out.println(question.getChoice()[j]);
                 System.out.println();
                 string = scan.nextLine();
                 question.setResponse(string);
