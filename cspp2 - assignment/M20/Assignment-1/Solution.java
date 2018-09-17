@@ -264,7 +264,7 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        int five = 5;
+        final int five = 5;
         if (q > 0) {
             for (int i = 0; i < q; i++) {
                 String[] tokens = scan.nextLine().split(":");
@@ -273,10 +273,14 @@ public final class Solution {
                     System.out.println("Error! Malformed question");
                     return;
                 } else if (options.length < 2) {
-                    System.out.println(tokens[0] + " does not have enough answer choices");
+                    System.out.println(tokens[0] + " does not" +
+                        "have enough answer choices");
                     return;
-                } else if (Integer.parseInt(tokens[2]) < 1 && Integer.parseInt(tokens[2]) > options.length || Integer.parseInt(tokens[2]) >= five) {
-                    System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
+                } else if (Integer.parseInt(tokens[2]) < 1
+                    && Integer.parseInt(tokens[2]) > options.length
+                    || Integer.parseInt(tokens[2]) >= five) {
+                    System.out.println("Error! Correct answer" +
+                        "choice number is out of range for " + tokens[0]);
                     return;
                 } else if (Integer.parseInt(tokens[2 + 1]) < 0) {
                     System.out.println("Invalid max marks for " + tokens[0]);
