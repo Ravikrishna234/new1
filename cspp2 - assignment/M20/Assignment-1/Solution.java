@@ -153,7 +153,7 @@ class Quiz {
     	size = 0;
     }
     /**
-     * Adds a question.
+     * Adds a question.e
      *
      * @param      q     The question
      */
@@ -185,7 +185,7 @@ class Quiz {
         int l = 0;
         for(int i = 0; i < size; i++) {
         	Question question = getQuestion(i);
-        	System.out.print(question.getQuestionText());
+        	System.out.println(question.getQuestionText());
         	if(question.evaluateResponse(question.getResponse())) {
         		s = " Correct Answer! - Marks Awarded:" + " "
         		+ Integer.toString(question.getMaxMarks());
