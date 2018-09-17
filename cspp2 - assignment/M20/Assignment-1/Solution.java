@@ -274,13 +274,13 @@ public final class Solution {
                     return;
                 } else if (options.length < 2) {
                     System.out.println(tokens[0] + " does not" +
-                        "have enough answer choices");
+                        " have enough answer choices");
                     return;
                 } else if (Integer.parseInt(tokens[2]) < 1
                     && Integer.parseInt(tokens[2]) > options.length
                     || Integer.parseInt(tokens[2]) >= five) {
                     System.out.println("Error! Correct answer" +
-                        "choice number is out of range for " + tokens[0]);
+                        " choice number is out of range for " + tokens[0]);
                     return;
                 } else if (Integer.parseInt(tokens[2 + 1]) < 0) {
                     System.out.println("Invalid max marks for " + tokens[0]);
