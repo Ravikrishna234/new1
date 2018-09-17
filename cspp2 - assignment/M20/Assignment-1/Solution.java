@@ -315,7 +315,7 @@ public final class Solution {
         	String string = "";
         	for(int i = 0; i < q; i++) {
         		Question question = quiz.getQuestion(i);
-        		System.out.println(question.getQuestionText() + "(" + question.getQuestionText() + ")");
+        		System.out.println(question.getQuestionText() + "(" + question.getMaxMarks() + ")");
         		int j = 0;
         		for(j = 0; j < question.getChoice().length - 1; j++) {
         			System.out.print(question.getChoice()[j] + "\t");
