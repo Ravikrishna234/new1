@@ -271,7 +271,7 @@ public final class Solution {
                 String[] options = tokens[1].split(",");
                 Question question = new Question(tokens[0], options, Integer.parseInt(tokens[2]),
                     Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
-                if (tokens.length != 5) {
+                if (tokens.length != 5 || tokens[2 + 2].equals("")) {
                     System.out.println("Error! Malformed question");
                     return;
                 } else if (options.length < 2) {
