@@ -152,8 +152,7 @@ class Quiz {
         size = 0;
     }
     /**
-     * Adds a question.e
-     *
+     * Adds a question.
      * @param      q     The question
      */
 
@@ -294,7 +293,8 @@ public final class Solution {
                 } else {
                     Question question = new Question(tokens[0], options,
                         Integer.parseInt(tokens[2]),
-                    Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
+                    Integer.parseInt(tokens[2 + 1]),
+                    Integer.parseInt(tokens[2 + 2]));
                     quiz.addQuestion(question);
                 }
             }
@@ -320,7 +320,8 @@ public final class Solution {
             String string = "";
             for (int i = 0; i < q; i++) {
                 Question question = quiz.getQuestion(i);
-                System.out.println(question.getQuestionText() + "(" + question.getMaxMarks() + ")");
+                System.out.println(question.getQuestionText()
+                    + "(" + question.getMaxMarks() + ")");
                 int j = 0;
                 for (j = 0; j < question.getChoice().length - 1; j++) {
                     System.out.print(question.getChoice()[j] + "\t");
@@ -346,3 +347,4 @@ public final class Solution {
     }
     }
 }
+
