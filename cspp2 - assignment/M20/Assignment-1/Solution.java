@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 /**
  * Class for question.
  */
@@ -171,22 +170,22 @@ class Quiz {
     public Question getQuestion(final int index) {
         return questions[index];
     }
+    /**
+     * @return value
+     */
     public int getSize() {
         return size;
     }
     /**
      * Shows the report.
-     *
-     * @return     { description_of_the_return_value }
      */
-
     public void showReport() {
         String s = "";
         int l = 0;
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             Question question = getQuestion(i);
             System.out.println(question.getQuestionText());
-            if(question.evaluateResponse(question.getResponse())) {
+            if (question.evaluateResponse(question.getResponse())) {
                 s = " Correct Answer! - Marks Awarded:" + " "
                 + Integer.toString(question.getMaxMarks());
                 System.out.println(s);
@@ -198,7 +197,7 @@ class Quiz {
                 l += question.getPenalty();
             }
         }
-        System.out.println("Total Score:" + " "+ Integer.toString(l));
+        System.out.println("Total Score:" + " " + Integer.toString(l));
 }
 }
 /**
@@ -265,17 +264,18 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
+        int five = 5;
         if (q > 0) {
             for (int i = 0; i < q; i++) {
                 String[] tokens = scan.nextLine().split(":");
                 String[] options = tokens[1].split(",");
-                if (tokens.length != 5 || tokens[2 + 2].equals("")) {
+                if (tokens.length != five || tokens[2 + 2].equals("")) {
                     System.out.println("Error! Malformed question");
                     return;
                 } else if (options.length < 2) {
                     System.out.println(tokens[0] + " does not have enough answer choices");
                     return;
-                } else if (Integer.parseInt(tokens[2]) < 1 && Integer.parseInt(tokens[2]) > options.length || Integer.parseInt(tokens[2]) >= 5) {
+                } else if (Integer.parseInt(tokens[2]) < 1 && Integer.parseInt(tokens[2]) > options.length || Integer.parseInt(tokens[2]) >= five) {
                     System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
                     return;
                 } else if (Integer.parseInt(tokens[2 + 1]) < 0) {
@@ -287,14 +287,13 @@ public final class Solution {
                 } else if(tokens[0].equals("")) {
                     System.out.println("Error! Malformed question");
                     return;
-                }
-                else {
+                } else {
                     Question question = new Question(tokens[0], options, Integer.parseInt(tokens[2]),
                     Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
                     quiz.addQuestion(question);
                 }
             }
-            System.out.println(q+" are added to the quiz");
+            System.out.println(q + " are added to the quiz");
         } else {
             System.out.println("Quiz does not have questions");
             return;
@@ -312,13 +311,13 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
-        if(quiz.getQuestion(0) != null) {
+        if (quiz.getQuestion(0) != null) {
             String string = "";
-            for(int i = 0; i < q; i++) {
+            for (int i = 0; i < q; i++) {
                 Question question = quiz.getQuestion(i);
                 System.out.println(question.getQuestionText() + "(" + question.getMaxMarks() + ")");
                 int j = 0;
-                for(j = 0; j < question.getChoice().length - 1; j++) {
+                for (j = 0; j < question.getChoice().length - 1; j++) {
                     System.out.print(question.getChoice()[j] + "\t");
                 }
                 System.out.println(question.getChoice()[j]);
@@ -337,7 +336,7 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
-        if(quiz.getQuestion(0) != null) {
+        if (quiz.getQuestion(0) != null) {
         quiz.showReport();
     }
     }
