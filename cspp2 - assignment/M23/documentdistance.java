@@ -104,7 +104,7 @@ class documentdistance {
             File inputfile = new File(x);
             File[] files = inputfile.listFiles();
             for(int i = 0; i < files.length; i++) {
-                System.out.print("        " + files[i].getName() + "     ");
+                System.out.print("        " + files[i].getName() + "  ");
             }
             System.out.println();
             for(int i = 0; i < files.length;i++) {
