@@ -137,8 +137,8 @@ class documentdistance {
             catch(FileNotFoundException e) {
             System.out.println("File not Found");
         }
-            }
-            //System.out.println();
+    }
+    System.out.println();
         }
 
     }
