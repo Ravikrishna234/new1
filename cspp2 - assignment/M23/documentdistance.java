@@ -33,7 +33,7 @@ class bag {
         //  System.out.print(key1 + ":" + map1.get(key1) + " , ");
         // }
     }
-    public void compare() {
+    public double compare() {
         double numerator = 0;
         double denominator1 = 0;
         double denominator2 = 0;
@@ -53,11 +53,9 @@ class bag {
             }
             double denominator = (Math.sqrt(denominator1) * Math.sqrt(denominator2));
             result = (numerator / denominator) * 100;
-            System.out.format("%.0f",result);
-            System.out.print("\t\t");
+            return result;
 
         }
-
 
     }
     class Stringmatch {
@@ -112,6 +110,9 @@ class bag {
 }
 class documentdistance {
     public static void main(String[] args) {
+         int max = 0;
+         int a1 = 0;
+         int a2 = 0;
         String[] tokens;
         Scanner scan = new Scanner(System.in);
          //Stringmatch sm = new Stringmatch();
@@ -129,7 +130,7 @@ class documentdistance {
             }
             System.out.println();
             for(int i = 0; i < files.length;i++) {
-                System.out.print(files[i].getName()+ "\t");
+                System.out.print(files[i].getName()+ "\t\t");
                 for(int j = 0; j < files.length; j++) {
                     bag b = new bag();
                      if(i == j) {
@@ -139,7 +140,7 @@ class documentdistance {
                      try {
                 Scanner s = new Scanner(files[i]);
                 String line = s.useDelimiter("\\A").next();//replaceAll("[^\\p{Alpha} ]","").toLowerCase();
-                tokens = line.toLowerCase().replaceAll("[^A-Za-z0-9_]","").split(" ");
+                tokens = line.toLowerCase().split(" ");
                 b.addwords(tokens);
             }
             catch(Exception e) {
@@ -151,16 +152,24 @@ class documentdistance {
                 try {
                 Scanner sc = new Scanner(files[j]);
                 String lines = sc.useDelimiter("\\A").next();//replaceAll("[^\\p{Alpha} ]","").toLowerCase();
-                String[] token = lines.toLowerCase().replaceAll("[^A-Za-z0-9_]","").split(" ");
+                String[] token = lines.toLowerCase().split(" ");
                 b.addword(token);
             }
             catch(FileNotFoundException e) {
             System.out.println("File not Found");
         }
-        b.compare();
-    }
-    System.out.println();
+
+        double result = b.compare();
+        System.out.format("%.0f",result);
+        System.out.print("\t\t");
+        if(result > max) {
+            a1 = j;
+            a2 = i;
+            result = max;
         }
+    }
+        }
+        System.out.println("Maximum similarity is between file"+a1+".txt and file"+a2+".txt");
 
     }
 }
