@@ -153,11 +153,11 @@ class documentdistance {
                 String lines = sc.useDelimiter("\\A").next();//replaceAll("[^\\p{Alpha} ]","").toLowerCase();
                 String[] token = lines.toLowerCase().split(" ");
                 b.addword(token);
-                b.compare();
             }
             catch(FileNotFoundException e) {
             System.out.println("File not Found");
         }
+        b.compare();
     }
     System.out.println();
         }
