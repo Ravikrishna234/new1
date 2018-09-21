@@ -112,7 +112,7 @@ class documentdistance {
                 for(int j = 0; j < files.length; j++) {
                     bag b = new bag();
                      if(i == j) {
-                        System.out.print("100" + " ");
+                        System.out.print("100" + "      ");
                         continue;
                      }
                      try {
