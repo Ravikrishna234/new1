@@ -57,12 +57,49 @@ class bag {
             System.out.print("       ");
 
         }
+
+
+    }
+    class Stringmatch {
+        String[] a;
+        String[] b;
+        int len1;
+        int len2;
+        public void match(String c) {
+            len1 = c.length();
+            a = c.split(" ");
+        }
+        public void match1(String d) {
+            len2 = d.length();
+            b = d.split(" ");
+        }
+        public void compare1() {
+            int max = 0;
+            double length = len1 + len2;
+            for(String i : a) {
+                for(String j : b) {
+                    if(i.equals(j)) {
+                        if(i.length() > max) {
+                        max = i.length();
+                    }
+                    }
+                }
+            }
+            double res = (max * 2) / length;
+            double result = res * 100;
+            System.out.println(result);
+        }
     }
 class documentdistance {
     public static void main(String[] args) {
         String[] tokens;
-        try{
-            Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+        Stringmatch sm = new Stringmatch();
+        // String x1 = scan.nextLine();
+        // String x2 = scan.nextLine();
+        // sm.match(x1);
+        // sm.match1(x2);
+        // sm.compare1();
             String x = scan.nextLine();
             File inputfile = new File(x);
             File[] files = inputfile.listFiles();
@@ -78,28 +115,31 @@ class documentdistance {
                         System.out.print("100" + " ");
                         continue;
                      }
+                     try {
                 Scanner s = new Scanner(files[i]);
                 String line = s.useDelimiter("\\A").next();//replaceAll("[^\\p{Alpha} ]","").toLowerCase();
                 tokens = line.toLowerCase().split(" ");
                 b.addwords(tokens);
+            }
+            catch(Exception e) {
+                System.out.print("No File Found");
+            }
 
 
 
-
+                try {
                 Scanner sc = new Scanner(files[j]);
                 String lines = sc.useDelimiter("\\A").next();//replaceAll("[^\\p{Alpha} ]","").toLowerCase();
                 String[] token = lines.toLowerCase().split(" ");
                 b.addword(token);
                 b.compare();
             }
-            System.out.println();
-        }
-    }
-
-        catch(FileNotFoundException e) {
+            catch(FileNotFoundException e) {
             System.out.println("File not Found");
         }
-        // b.compare();
+            }
+            //System.out.println();
+        }
 
     }
 }
