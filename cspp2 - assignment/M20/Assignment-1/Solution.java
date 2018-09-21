@@ -264,32 +264,34 @@ public final class Solution {
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
         final int five = 5;
+        try {
         if (q > 0) {
             for (int i = 0; i < q; i++) {
                 String[] tokens = scan.nextLine().split(":");
                 String[] options = tokens[1].split(",");
                 if (tokens.length != five || tokens[2 + 2].equals("")) {
                     System.out.println("Error! Malformed question");
-                    return;
+                    throw new Exception();
+                    //return;
                 } else if (options.length < 2) {
                     System.out.println(tokens[0] + " does not"
                         + " have enough answer choices");
-                    return;
+                    throw new Exception();
                 } else if (Integer.parseInt(tokens[2]) < 1
                     && Integer.parseInt(tokens[2]) > options.length
                     || Integer.parseInt(tokens[2]) >= five) {
                     System.out.println("Error! Correct answer"
                         + " choice number is out of range for " + tokens[0]);
-                    return;
+                    throw new Exception();
                 } else if (Integer.parseInt(tokens[2 + 1]) < 0) {
                     System.out.println("Invalid max marks for " + tokens[0]);
-                    return;
+                    throw new Exception();
                 } else if (Integer.parseInt(tokens[2 + 2]) > 0) {
                     System.out.println("Invalid penalty for " + tokens[0]);
-                    return;
+                    throw new Exception();
                 } else if (tokens[0].equals("")) {
                     System.out.println("Error! Malformed question");
-                    return;
+                    throw new Exception();
                 } else {
                     Question question = new Question(tokens[0], options,
                         Integer.parseInt(tokens[2]),
@@ -301,8 +303,12 @@ public final class Solution {
             System.out.println(q + " are added to the quiz");
         } else {
             System.out.println("Quiz does not have questions");
-            return;
+            throw new Exception();
         }
+    }
+    catch(Exception e){
+        return;
+    }
     }
     /**
      * Starts a quiz.
