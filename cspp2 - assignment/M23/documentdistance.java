@@ -61,51 +61,73 @@ class bag {
 
     }
     class Stringmatch {
-        String[] a;
-        String[] b;
-        int len1;
-        int len2;
-        public void match(String c) {
-            len1 = c.length();
-            a = c.split(" ");
-        }
-        public void match1(String d) {
-            len2 = d.length();
-            b = d.split(" ");
-        }
-        public void compare1() {
-            int max = 0;
-            double length = len1 + len2;
-            for(String i : a) {
-                for(String j : b) {
-                    if(i.equals(j)) {
-                        if(i.length() > max) {
-                        max = i.length();
-                    }
+        //String[] a;
+        //String[] b;
+        // int len1;
+        // int len2;
+        // public void match(String c) {
+        //     len1 = c.length();
+        //     a = c.split(" ");
+        // }
+        // public void match1(String d) {
+        //     len2 = d.length();
+        //     b = d.split(" ");
+        // }
+        public void compare1(String a, String b) {
+             double max = 0;
+             double count = 0;
+             //System.out.print(a.length() + " " + b.length());
+             int length = a.length() + b.length();
+             //System.out.println(length);
+             for(int i = 0; i < a.length(); i++) {
+                for(int j = 0; j < b.length(); j++) {
+                    int g = 0;
+                    if(a.charAt(i) == b.charAt(j)) {
+                        count = 1;
+                    //System.out.print(i + g + " " + a.length() + " " + j + g + " " + b.length());
+                    while((i + g)<a.length() && (j + g)<b.length()) {
+                        if(b.charAt(j+g) == a.charAt(i+g)) {
+                            count++;
+                            //System.out.print(count);
+                            if(count > max) {
+                                max = count;
+                            }
+                        }
+                            else {
+                                count = 0;
+                                break;
+                            }
+                            g++;
                     }
                 }
-            }
+                }
+             }
+             //System.out.println(max);
+        //
+             //System.out.println(max);
+             //System.out.println(length);
             double res = (max * 2) / length;
-            double result = res * 100;
+             double result = res * 100;
             System.out.println(result);
-        }
-    }
+
+}
+}
 class documentdistance {
     public static void main(String[] args) {
         String[] tokens;
         Scanner scan = new Scanner(System.in);
         Stringmatch sm = new Stringmatch();
-        // String x1 = scan.nextLine();
-        // String x2 = scan.nextLine();
-        // sm.match(x1);
-        // sm.match1(x2);
-        // sm.compare1();
+         String x1 = scan.nextLine();
+         String x2 = scan.nextLine();
+         //sm.match(x1);
+         //sm.match1(x2);
+         sm.compare1(x1,x2);
             String x = scan.nextLine();
             File inputfile = new File(x);
             File[] files = inputfile.listFiles();
-            System.out.print("           ");
+            System.out.print("\t\t");
             for(int i = 0; i < files.length; i++) {
-                System.out.print(files[i].getName() + "  ");
+                System.out.print(files[i].getName() + "\t");
             }
             System.out.println();
             for(int i = 0; i < files.length;i++) {
