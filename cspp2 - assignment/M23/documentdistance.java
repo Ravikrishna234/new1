@@ -139,7 +139,7 @@ class documentdistance {
                      try {
                 Scanner s = new Scanner(files[i]);
                 String line = s.useDelimiter("\\A").next();//replaceAll("[^\\p{Alpha} ]","").toLowerCase();
-                tokens = line.toLowerCase().split(" ");
+                tokens = line.toLowerCase().replaceAll("[^A-Za-z0-9_]","").split(" ");
                 b.addwords(tokens);
             }
             catch(Exception e) {
@@ -151,7 +151,7 @@ class documentdistance {
                 try {
                 Scanner sc = new Scanner(files[j]);
                 String lines = sc.useDelimiter("\\A").next();//replaceAll("[^\\p{Alpha} ]","").toLowerCase();
-                String[] token = lines.toLowerCase().split(" ");
+                String[] token = lines.toLowerCase().replaceAll("[^A-Za-z0-9_]","").split(" ");
                 b.addword(token);
             }
             catch(FileNotFoundException e) {
