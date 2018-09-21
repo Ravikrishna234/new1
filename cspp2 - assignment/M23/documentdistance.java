@@ -116,12 +116,12 @@ class documentdistance {
     public static void main(String[] args) {
         String[] tokens;
         Scanner scan = new Scanner(System.in);
-        Stringmatch sm = new Stringmatch();
-         String x1 = scan.nextLine();
-         String x2 = scan.nextLine();
-         //sm.match(x1);
-         //sm.match1(x2);
-         sm.compare1(x1,x2);
+        // Stringmatch sm = new Stringmatch();
+        //  String x1 = scan.nextLine();
+        //  String x2 = scan.nextLine();
+        //  //sm.match(x1);
+        //  //sm.match1(x2);
+        //  sm.compare1(x1,x2);
             String x = scan.nextLine();
             File inputfile = new File(x);
             File[] files = inputfile.listFiles();
