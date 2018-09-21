@@ -306,7 +306,7 @@ public final class Solution {
             throw new Exception();
         }
     }
-    catch(Exception e){
+    catch (Exception e) {
         return;
     }
     }
@@ -353,3 +353,4 @@ public final class Solution {
     }
     }
 }
+
