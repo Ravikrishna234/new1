@@ -305,8 +305,7 @@ public final class Solution {
             System.out.println("Quiz does not have questions");
             throw new Exception();
         }
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
         return;
     }
     }
