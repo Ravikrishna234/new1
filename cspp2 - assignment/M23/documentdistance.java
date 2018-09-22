@@ -36,10 +36,10 @@ final class Documentdistance {
                 System.out.print(files[i].getName() + "\t");
                 for (int j = 0; j < files.length; j++) {
                     bag b = new bag();
-                      if(i == j) {
-                        System.out.print("100" + "\t\t");
-                        continue;
-                     }
+                     //  if(i == j) {
+                     //    System.out.print("100" + "\t\t");
+                     //    continue;
+                     // }
                      try {
                 Scanner s = new Scanner(files[i]);
                 String line = s.useDelimiter("\\A").next();
@@ -48,6 +48,7 @@ final class Documentdistance {
                 b.addwords(tokens);
             } catch (Exception e) {
                 System.out.print("0");
+                break;
             }
 
 
@@ -60,6 +61,7 @@ final class Documentdistance {
                 b.addword(token);
             } catch (Exception e) {
             System.out.println("0");
+            break;
         }
 
         double result = b.compare();
