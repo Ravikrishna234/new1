@@ -162,24 +162,23 @@ public class Todoist {
         String status = tokens[6];
 
                 if(title.equals("")) {
-                    //System.out.println();
-                    throw new Exception("Title not provided");
+                    System.out.println("Title not provided");
+                    throw new Exception();
                 }
                 else if(timeToComplete < 0) {
-                    //System.out.println();
-                    throw new Exception(" Invalid timeToComplete" + timeToComplete);
+                    System.out.println(" Invalid timeToComplete" + timeToComplete);
+                    throw new Exception();
                 }
                 else if(status.equals("todo") || status.equals("done")) {
-                    //System.out.println();
-                    throw new Exception("Invalid Status" + status);
+                    System.out.println("Invalid Status" + status);
+                    throw new Exception();
                 }
                 else{
-        return new Task(
-            title, assignedTo, timeToComplete, important, urgent, status);
+        return new Task(title, assignedTo, timeToComplete, important, urgent, status);
     }
 }
     catch(Exception e) {
-        System.out.println(e.getMessage());
+
     }
     return null;
 }
