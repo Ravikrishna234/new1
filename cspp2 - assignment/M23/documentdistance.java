@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.io.File;
-import java.util.Arrays;
 /**DOCUMENTDISTANCE.**/
 final class Documentdistance {
    /**
@@ -44,7 +43,7 @@ final class Documentdistance {
                 Scanner s = new Scanner(files[i]);
                 String line = s.useDelimiter("\\A").next();
                 //replaceAll("[^\\p{Alpha} ]","").toLowerCase();
-                tokens = line.replaceAll("[^A-Za-z0-9_ ]","").
+                tokens = line.replaceAll("[^A-Za-z0-9_ ]", "").
                 toLowerCase().split(" ");
                 b.addwords(tokens);
             } catch (Exception e) {
@@ -58,7 +57,7 @@ final class Documentdistance {
                 Scanner sc = new Scanner(files[j]);
                 String lines = sc.useDelimiter("\\A").next();
                 //replaceAll("[^\\p{Alpha} ]","").toLowerCase();
-                String[] token = lines.replaceAll("[^A-Za-z0-9_ ]","").
+                String[] token = lines.replaceAll("[^A-Za-z0-9_ ]", "").
                 toLowerCase().split(" ");
                 b.addword(token);
             } catch (Exception e) {
