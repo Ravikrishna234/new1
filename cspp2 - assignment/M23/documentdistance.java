@@ -47,7 +47,7 @@ final class Documentdistance {
                 tokens = line.toLowerCase().split(" ");
                 b.addwords(tokens);
             } catch (Exception e) {
-                System.out.print("No File Found");
+                System.out.print("0");
             }
 
 
@@ -59,7 +59,7 @@ final class Documentdistance {
                 String[] token = lines.toLowerCase().split(" ");
                 b.addword(token);
             } catch (Exception e) {
-            System.out.println("File not Found");
+            System.out.println("0");
         }
 
         double result = b.compare();
