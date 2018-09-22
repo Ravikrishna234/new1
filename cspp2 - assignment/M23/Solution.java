@@ -25,7 +25,7 @@ public final class Solution {
         try {
             File folder = new File(scan.next());
             File[] listOfFiles = folder.listFiles();
-            for(File i : listOfFiles) {
+            for (File i : listOfFiles) {
                 FileReader fr = new FileReader(i);
                 BufferedReader br = new BufferedReader(fr);
                 String buffer = "";
