@@ -27,7 +27,8 @@ class Solution {
             ArrayList<Stringmatch> objects = new ArrayList<>();
             for (File filename : testfiles) {
                 try {
-                    String content = new String(Files.readAllBytes(Paths.get(filename.getAbsolutePath())));
+                    String content = new String(Files.readAllBytes(
+                    	Paths.get(filename.getAbsolutePath())));
                     content = content.replaceAll("\n", " ")
                     .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
                     fileStrings.add(content);
@@ -49,7 +50,7 @@ class Solution {
                 }
                 i++;
             }
-        } catch(Exception e){
+        } catch(Exception e) {
             System.out.println("Empty Directory");
         }
     }
