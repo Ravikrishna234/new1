@@ -58,8 +58,8 @@ class Task {
     }
         public String toString() {
             String s;
-        s = this.title  + "," + this.personname + "," + this.time + "," + getcomplete(this.task_complete)
-        + "," + getUrgent(this.task_urgent) + ", " + this.task_pending;
+        s = this.title  + ", " + this.personname + ", " + this.time + ", " + getcomplete(this.task_complete)
+        + ", " + getUrgent(this.task_urgent) + ", " + this.task_pending;
         return s;
     }
     }
