@@ -11,7 +11,7 @@ final class Solution {
 	/**
 	 * @param args value
 	 */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner input = new Scanner(System.in);
         try {
         File testcase = new File(input.nextLine());
