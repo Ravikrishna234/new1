@@ -57,16 +57,20 @@ class Task {
         }
     }
         public String toString() {
+
             String s;
         s = this.title  + ", " + this.personname + ", " + this.time + ", " + getcomplete(this.task_complete)
         + ", " + getUrgent(this.task_urgent) + ", " + this.task_pending;
         return s;
-    }
+
+}
     }
 public class Todoist {
     Task[] tasks;
+    int size;
     Todoist() {
         tasks = new Task[100];
+        size = 0;
     }
 
     /**
@@ -111,6 +115,13 @@ public class Todoist {
      * @param      todo    The todo
      * @param      tokens  The tokens
      */
+    // public static void addTask(String[] tokens) {
+    //     int i;
+    //     for(i = 0; i < tokens.length;i++) {
+
+    //         tasks[size++] = tokens[i];
+    //     }
+    // }
     // public static void testAddTask(final Todoist todo, final String[] tokens) {
     //     try {
     //         todo.addTask(createTask(tokens));
@@ -142,15 +153,36 @@ public class Todoist {
      * @throws     Exception  if task inputs are invalid
      */
     public static Task createTask(final String[] tokens) throws Exception {
+        try {
         String title = tokens[1];
         String assignedTo = tokens[2];
         int timeToComplete = Integer.parseInt(tokens[3]);
         boolean important = tokens[4].equals("y");
         boolean urgent = tokens[5].equals("y");
         String status = tokens[6];
+
+                if(title.equals("")) {
+                    //System.out.println();
+                    throw new Exception("Title not provided");
+                }
+                else if(timeToComplete < 0) {
+                    //System.out.println();
+                    throw new Exception(" Invalid timeToComplete" + timeToComplete);
+                }
+                else if(status.equals("todo") || status.equals("done")) {
+                    //System.out.println();
+                    throw new Exception("Invalid Status" + status);
+                }
+                else{
         return new Task(
             title, assignedTo, timeToComplete, important, urgent, status);
     }
+}
+    catch(Exception e) {
+        System.out.println(e.getMessage());
+    }
+    return null;
+}
 
     /**
      * main method.
