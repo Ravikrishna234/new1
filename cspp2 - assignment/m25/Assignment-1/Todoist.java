@@ -45,7 +45,7 @@ class Task {
             return "Important";
         }
         else {
-            return "Not important";
+            return "Not Important";
         }
     }
         public String getUrgent(boolean value) {
