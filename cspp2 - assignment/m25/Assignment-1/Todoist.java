@@ -45,7 +45,7 @@ class Task {
             return "Important";
         }
         else {
-            return "Not important";
+            return "Not Important";
         }
     }
         public String getUrgent(boolean value) {
@@ -157,7 +157,7 @@ public class Todoist {
 
         }
         else if(status.equals("dud")) {
-            throw new Exception("Invalid status" + status);
+            throw new Exception("Invalid status " + status);
         }
         return new Task(
             title, assignedTo, timeToComplete, important, urgent, status);
