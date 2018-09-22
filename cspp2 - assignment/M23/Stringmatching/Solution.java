@@ -5,13 +5,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 /**STRINGMATCHING.**/
 final class Solution {
-	/**
-	 *Class for Stringmatch.
-	 */
-	private Solution() { }
-	/**
-	 * @param args value
-	 */
+    /**
+     *Class for Stringmatch.
+     */
+    private Solution() { }
+    /**
+     * @param args value
+     */
     public static void main(final String[] args) {
         Scanner input = new Scanner(System.in);
         try {
@@ -29,7 +29,7 @@ final class Solution {
             for (File filename : testfiles) {
                 try {
                     String content = new String(Files.readAllBytes(
-                    	Paths.get(filename.getAbsolutePath())));
+                        Paths.get(filename.getAbsolutePath())));
                     content = content.replaceAll("\n", " ")
                     .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
                     fileStrings.add(content);
@@ -45,7 +45,7 @@ final class Solution {
                 for (String input2 : fileStrings) {
                     objects.add(new Stringmatch(input1, input2));
                     objects.get(k).common(input1.toCharArray(),
-                    	input2.toCharArray(), input1.length(), input2.length());
+                        input2.toCharArray(), input1.length(), input2.length());
                     System.out.print(objects.get(k).getresult() + "         ");
                     k++;
                 }
