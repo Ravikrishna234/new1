@@ -27,7 +27,7 @@ final class Documentdistance {
             String x = scan.nextLine();
             File inputfile = new File(x);
             File[] files = inputfile.listFiles();
-            System.out.print("\t\t");
+            System.out.print("      " + "\t\t");
             for (int i = 0; i < files.length; i++) {
                 System.out.print(files[i].getName() + "\t");
             }
