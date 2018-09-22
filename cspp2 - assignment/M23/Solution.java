@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.util.regex.Matcher;
 import java.io.FileReader;
 import java.io.File;
+/**
+ * Class for plagiarism.
+ */
 public final class Solution {
     /**
      * Constructs the object.
@@ -30,7 +33,7 @@ public final class Solution {
                 BufferedReader br = new BufferedReader(fr);
                 String buffer = "";
                 String s;
-                while(((s = br.readLine()) != null)) {
+                while (((s = br.readLine()) != null)) {
                     buffer += s;
                 }
                 Pattern p = Pattern.compile("[^a-z A-Z 0-9]");
