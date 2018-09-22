@@ -32,7 +32,7 @@ class Solution {
                     content = content.replaceAll("\n", " ")
                     .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
                     fileStrings.add(content);
-                } catch(Exception e) {
+                } catch (Exception e) {
                     System.out.println("file not found");
                 }
             }
