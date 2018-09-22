@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+/**STRINGMATCHING.**/
 final class Solution {
 	/**
 	 *Class for Stringmatch.
