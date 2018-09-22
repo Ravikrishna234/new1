@@ -34,9 +34,9 @@ public class bag {
         // }
     }
     public double compare() {
-        double numerator = 0;
-        double denominator1 = 0;
-        double denominator2 = 0;
+        int numerator = 0;
+        int denominator1 = 0;
+        int denominator2 = 0;
         double result = 0;
         for(String key2 : map.keySet()) {
             if(map1.containsKey(key2)) {
