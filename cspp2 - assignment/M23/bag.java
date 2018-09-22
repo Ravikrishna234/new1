@@ -52,7 +52,7 @@ public class bag {
 
             }
             double denominator = (Math.sqrt(denominator1) * Math.sqrt(denominator2));
-            result = (numerator / denominator) * 100;
+            result = (Math.round(numerator) / denominator) * 100;
             return result;
 
         }
