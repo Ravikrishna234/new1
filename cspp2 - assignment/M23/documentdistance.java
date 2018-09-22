@@ -48,7 +48,6 @@ final class Documentdistance {
                 b.addwords(tokens);
             } catch (Exception e) {
                 System.out.print("0");
-                break;
             }
 
 
@@ -60,8 +59,7 @@ final class Documentdistance {
                 String[] token = lines.toLowerCase().split(" ");
                 b.addword(token);
             } catch (Exception e) {
-            System.out.println("0");
-            break;
+            System.out.print("0");
         }
 
         double result = b.compare();
