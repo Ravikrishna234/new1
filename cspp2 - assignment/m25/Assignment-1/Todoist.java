@@ -45,7 +45,7 @@ class Task {
             return "Important";
         }
         else {
-            return "Not Important";
+            return "Not important";
         }
     }
         public String getUrgent(boolean value) {
@@ -57,20 +57,16 @@ class Task {
         }
     }
         public String toString() {
-
             String s;
-        s = this.title  + ", " + this.personname + ", " + this.time + ", " + getcomplete(this.task_complete)
-        + ", " + getUrgent(this.task_urgent) + ", " + this.task_pending;
+        s = this.title  + "," + this.personname + "," + this.time + "," + getcomplete(this.task_complete)
+        + "," + getUrgent(this.task_urgent) + ", " + this.task_pending;
         return s;
-
-}
+    }
     }
 public class Todoist {
     Task[] tasks;
-    int size;
     Todoist() {
         tasks = new Task[100];
-        size = 0;
     }
 
     /**
@@ -90,15 +86,15 @@ public class Todoist {
                     //testAddTask(todo, tokens);
                 break;
                 case "print-todoist":
-                    System.out.println(todo);
+                    //System.out.println(todo);
                 break;
                 case "get-next":
                     //System.out.println(todo.getNextTask(tokens[1]));
                 break;
                 case "get-next-n":
-                    int n = Integer.parseInt(tokens[2]);
-                    //Task[] tasks = todo.getNextTask(tokens[1], n);
-                    //System.out.println(Arrays.deepToString(tasks));
+                    // int n = Integer.parseInt(tokens[2]);
+                    // Task[] tasks = todo.getNextTask(tokens[1], n);
+                    // System.out.println(Arrays.deepToString(tasks));
                 break;
                 case "total-time":
                     //System.out.println(todo.totalTime4Completion());
@@ -115,13 +111,6 @@ public class Todoist {
      * @param      todo    The todo
      * @param      tokens  The tokens
      */
-    // public static void addTask(String[] tokens) {
-    //     int i;
-    //     for(i = 0; i < tokens.length;i++) {
-
-    //         tasks[size++] = tokens[i];
-    //     }
-    // }
     // public static void testAddTask(final Todoist todo, final String[] tokens) {
     //     try {
     //         todo.addTask(createTask(tokens));
@@ -152,36 +141,27 @@ public class Todoist {
      *
      * @throws     Exception  if task inputs are invalid
      */
-    public static Task createTask(final String[] tokens) throws Exception {
-        try {
+    public static Task createTask(final String[] tokens) throws Exception
+     {
         String title = tokens[1];
         String assignedTo = tokens[2];
         int timeToComplete = Integer.parseInt(tokens[3]);
         boolean important = tokens[4].equals("y");
         boolean urgent = tokens[5].equals("y");
         String status = tokens[6];
+        if(title.equals("")) {
+            throw new Exception("Title Not provided");
+        }
+        else if(timeToComplete < 0) {
+            throw new Exception("Invalid timeToComplete" + timeToComplete);
 
-                if(title.equals("")) {
-                    System.out.println("Title not provided");
-                    throw new Exception();
-                }
-                else if(timeToComplete < 0) {
-                    System.out.println(" Invalid timeToComplete" + timeToComplete);
-                    throw new Exception();
-                }
-                else if(status.equals("todo") || status.equals("done")) {
-                    System.out.println("Invalid Status" + status);
-                    throw new Exception();
-                }
-                else{
-        return new Task(title, assignedTo, timeToComplete, important, urgent, status);
+        }
+        else if((!status.equals("todo")) || (!status.equals("done"))) {
+            throw new Exception("Invalid status" + status);
+        }
+        return new Task(
+            title, assignedTo, timeToComplete, important, urgent, status);
     }
-}
-    catch(Exception e) {
-
-    }
-    return null;
-}
 
     /**
      * main method.
