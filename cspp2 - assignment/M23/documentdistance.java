@@ -23,10 +23,10 @@ final class Documentdistance {
         // //  //sm.match(x1);
         // //  //sm.match1(x2);
         //   sm.compare1(x1,x2);
+        try {
             String x = scan.nextLine();
             File inputfile = new File(x);
             File[] files = inputfile.listFiles();
-
             System.out.print("\t\t");
             for (int i = 0; i < files.length; i++) {
                 System.out.print(files[i].getName() + "\t");
@@ -77,7 +77,10 @@ final class Documentdistance {
         }
         System.out.println("Maximum similarity is between File" + a1
             + ".txt and File" + a2 + ".txt");
-
+    }catch(Exception e) {
+    	System.out.println("empty directory");
     }
+}
+
 }
 
