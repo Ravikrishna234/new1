@@ -48,6 +48,7 @@ final class Documentdistance {
                 b.addwords(tokens);
             } catch (Exception e) {
                 System.out.print("0");
+                break;
             }
 
 
@@ -60,6 +61,7 @@ final class Documentdistance {
                 b.addword(token);
             } catch (Exception e) {
             System.out.print("0");
+            break;
         }
 
         double result = b.compare();
