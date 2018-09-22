@@ -150,10 +150,10 @@ public class Todoist {
         boolean urgent = tokens[5].equals("y");
         String status = tokens[6];
         if(title.equals("")) {
-            throw new Exception("Title Not provided");
+            throw new Exception("Title not provided");
         }
         else if(timeToComplete < 0) {
-            throw new Exception("Invalid timeToComplete" + timeToComplete);
+            throw new Exception("Invalid timeToComplete " + timeToComplete);
 
         }
         else if(status.equals("dud")) {
