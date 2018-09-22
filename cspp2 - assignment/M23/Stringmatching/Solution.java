@@ -44,7 +44,7 @@ class Solution {
                 for (String input2 : fileStrings) {
                     objects.add(new Stringmatch(input1, input2));
                     objects.get(k).common(input1.toCharArray(),
-                     input2.toCharArray(),input1.length(), input2.length());
+                    	input2.toCharArray(), input1.length(), input2.length());
                     System.out.print(objects.get(k).getresult() + "         ");
                     k++;
                 }
