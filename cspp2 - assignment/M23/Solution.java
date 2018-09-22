@@ -43,8 +43,7 @@ public final class Solution {
                 fr.close();
                 pl.load(words);
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("empty directory");
         }pl.bagofwords();
     }
