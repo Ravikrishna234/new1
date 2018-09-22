@@ -26,7 +26,7 @@ final class Documentdistance {
             String x = scan.nextLine();
             File inputfile = new File(x);
             File[] files = inputfile.listFiles();
-            System.out.print("\t\t");
+            System.out.print("\t");
             for (int i = 0; i < files.length; i++) {
                 System.out.print(files[i].getName() + "\t");
             }
@@ -67,7 +67,7 @@ final class Documentdistance {
 
         double result = b.compare();
         System.out.format("%.0f", result);
-        System.out.print("\t\t");
+        System.out.print("\t");
         if (result > max && i != j) {
             a1 = j + 1;
             a2 = i + 1;
