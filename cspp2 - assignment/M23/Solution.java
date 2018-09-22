@@ -45,6 +45,6 @@ public final class Solution {
             }
         } catch (Exception e) {
             System.out.println("empty directory");
-        }pl.bagofwords();
+        } pl.bagofwords();
     }
 }
