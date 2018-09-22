@@ -36,10 +36,10 @@ final class Documentdistance {
                 System.out.print(files[i].getName() + "\t");
                 for (int j = 0; j < files.length; j++) {
                     bag b = new bag();
-                     // if(i == j) {
-                     //    System.out.print("100" + "\t\t");
-                     //    continue;
-                     // }
+                      if(i == j) {
+                        System.out.print("100" + "\t\t");
+                        continue;
+                     }
                      try {
                 Scanner s = new Scanner(files[i]);
                 String line = s.useDelimiter("\\A").next();
