@@ -50,7 +50,7 @@ class Solution {
                 }
                 i++;
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Empty Directory");
         }
     }
