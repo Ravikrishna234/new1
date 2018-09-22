@@ -79,7 +79,7 @@ final class Documentdistance {
         System.out.println("Maximum similarity is between File" + a1
             + ".txt and File" + a2 + ".txt");
     } catch (Exception e) {
-    	System.out.println("empty directory");
+        System.out.println("empty directory");
     }
 }
 
