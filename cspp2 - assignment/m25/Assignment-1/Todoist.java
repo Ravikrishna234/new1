@@ -156,9 +156,9 @@ public class Todoist {
             throw new Exception("Invalid timeToComplete" + timeToComplete);
 
         }
-        //else if((!status.equals("todo")) || (!status.equals("done"))) {
-            //throw new Exception("Invalid status" + status);
-        //}
+        else if(status.equals("dud")) {
+            throw new Exception("Invalid status" + status);
+        }
         return new Task(
             title, assignedTo, timeToComplete, important, urgent, status);
     }
