@@ -41,7 +41,7 @@ class Solution {
             for (String input1 : fileStrings) {
                 System.out.println();
                 System.out.print("File" + i + ".txt" + "        ");
-                for(String input2 : fileStrings) {
+                for (String input2 : fileStrings) {
                     objects.add(new Stringmatch(input1, input2));
                     objects.get(k).common(input1.toCharArray(),
                      input2.toCharArray(),input1.length(), input2.length());
